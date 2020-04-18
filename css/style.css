@@ -384,7 +384,7 @@ header {
 }
 
 .ui-steps li:not(:last-child) {
-    border-bottom: 1px solid #f8e3f0;
+    border-bottom: 1px solid #eee;
 }
 
 .perspective-phone {
