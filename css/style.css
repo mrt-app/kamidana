@@ -88,6 +88,10 @@ p.lead {
     margin-bottom: 2rem;
 }
 
+ol {
+    color: #959094;
+}
+
 .text-primary {
     color: #89B1EF !important;
 }
