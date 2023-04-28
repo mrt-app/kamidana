@@ -109,4 +109,15 @@ $(function() {
         });
     }
 
+    var language = NavigatorGetLanguage();
+    if(!location.search.includes('lang') && language != 'ja'){ location.href = './index-en.html'; }
+
 }); /* End Fn */
+
+function NavigatorGetLanguage(){
+    var navigator_obj = window.navigator;
+    if(navigator_obj.language !== undefined) return navigator_obj.language;
+    if(navigator_obj.browserLanguage !== undefined) return navigator_obj.browserLanguage;
+    if(navigator_obj.userLanguage !== undefined) return navigator_obj.userLanguage;
+    return "ja";
+}
