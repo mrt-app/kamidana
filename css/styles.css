@@ -19,9 +19,9 @@ Table Of Contents:
 
 /*****************************************
 Colors:
-- Backgrounds - light gray #f1f9fc
+- Backgrounds - light gray #e0deff
 - Buttons, icons - purple #594cda
-- Buttons, icons - red #eb427e
+- Buttons, icons - red #4283eb
 - Headings text - black #252c38
 - Body text - dark gray #6b747b
 ******************************************/
@@ -98,7 +98,7 @@ h6 {
 }
 
 .bg-gray {
-    background-color: #f1f9fc;
+    background-color: #F5FBFF;
 }
 
 .container {
@@ -109,9 +109,9 @@ h6 {
 .btn-solid-reg {
     display: inline-block;
     padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-    border: 1px solid #594cda;
+    border: 1px solid #0F4C81;
     border-radius: 32px;
-    background-color: #594cda;
+    background-color: #0F4C81;
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem;
@@ -121,18 +121,17 @@ h6 {
 }
 
 .btn-solid-reg:hover {
-    border: 1px solid #594cda;
+    border: 1px solid #0F4C81;
     background-color: transparent;
-    color: #594cda; /* needs to stay here because of the color property of a tag */
+    color: #0F4C81; /* needs to stay here because of the color property of a tag */
     text-decoration: none;
 }
 
 .btn-solid-lg {
     display: inline-block;
     padding: 1.625rem 2.75rem 1.625rem 2.75rem;
-    border: 1px solid #594cda;
+    border: 1px solid #fff;
     border-radius: 32px;
-    background-color: #594cda;
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem;
@@ -142,12 +141,13 @@ h6 {
     margin-right: 0.25rem;
     margin-bottom: 1.25rem;
     margin-left: 0.25rem;
+    color: #fff;
 }
 
 .btn-solid-lg:hover {
-    border: 1px solid #594cda;
+    border: 1px solid #0F4C81;
     background-color: transparent;
-    color: #594cda; /* needs to stay here because of the color property of a tag */
+    color: #0F4C81; /* needs to stay here because of the color property of a tag */
     text-decoration: none;
 }
 
@@ -163,14 +163,14 @@ h6 {
 }
 
 .btn-solid-lg.secondary {
-    border: 1px solid #eb427e;
-    background-color: #eb427e;
+    border: 1px solid #4283eb;
+    background-color: #4283eb;
 }
 
 .btn-solid-lg.secondary:hover {
-    border: 1px solid #eb427e;
+    border: 1px solid #4283eb;
     background: transparent;
-    color: #eb427e; /* needs to stay here because of the color property of a tag */
+    color: #4283eb; /* needs to stay here because of the color property of a tag */
 }
 
 .btn-outline-reg {
@@ -234,7 +234,7 @@ h6 {
 }
 
 .list .fas {
-    color: #594cda;
+    color: #7c6eff;
     font-size: 0.75rem;
     line-height: 1.625rem;
 }
@@ -351,9 +351,9 @@ input[type="checkbox"] {
     display: inline-block;
     width: 100%;
     height: 3.25rem;
-    border: 1px solid #594cda;
+    border: 1px solid #7c6eff;
     border-radius: 32px;
-    background-color: #594cda;
+    background-color: #7c6eff;
     color: #252c38;
     font-weight: 600;
     font-size: 0.875rem;
@@ -416,7 +416,6 @@ input[type="checkbox"] {
 
 .navbar {
     position: relative;
-    background-color: #f1f9fc;
     padding: 0.5rem 1rem;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -425,7 +424,15 @@ input[type="checkbox"] {
     font-size: 0.875rem;
     line-height: 0.75rem;
     transition: all 0.2s ease;
+    background:transparent;
 }
+.navbar span{
+    color: #ddd;
+}
+.top-nav-collapse {
+    background-color: #0F4C81;
+}
+
 
 .fixed-top {
     position: fixed;
@@ -457,7 +464,7 @@ input[type="checkbox"] {
     padding-left: 1rem;
     overflow-y: auto;
     visibility: hidden;
-    background-color: #f1f9fc;
+    background-color: #dff;
     transition: visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
@@ -501,7 +508,7 @@ input[type="checkbox"] {
 .dropdown.show > a,
 .nav-link:hover,
 .nav-link.active {
-    color: #ff6e84;
+    color: #4283eb;
     text-decoration: none;
 }
 
@@ -516,7 +523,7 @@ input[type="checkbox"] {
     font-size: 1rem;
     color: #212529;
     list-style: none;
-    background-color: #f1f9fc;
+    background-color: #e0deff;
     background-clip: padding-box;
     border-radius: 0.25rem;
     animation: fadeDropdown 0.2s; /* required for the fade animation */
@@ -556,7 +563,7 @@ input[type="checkbox"] {
 .dropdown-item:hover,
 .dropdown-item:focus {
     text-decoration: none;
-    background-color: #f1f9fc;
+    background-color: #e0deff;
     color: #ff6e84;
 }
 
@@ -573,7 +580,15 @@ input[type="checkbox"] {
 /*    Header     */
 /*****************/
 .header {
-    background: linear-gradient(rgba(238, 239, 250, 1), rgba(255, 255, 255, 1));
+    background: radial-gradient(circle at bottom, #ffffff 50%, #dff 55%, #0F4C81 100%);
+    overflow: hidden;
+}
+.header h1 {
+    color: #ddd;
+}
+
+.header p {
+    color: #eee;
 }
 
 /********************/
@@ -590,7 +605,7 @@ input[type="checkbox"] {
     padding: 3.125rem 1rem 2.125rem 1rem;
     border: none;
     border-radius: 16px;
-    background-color: #f1f9fc;
+    background-color: #F5FBFF;
 }
 
 .cards-1 .card-image {
@@ -610,6 +625,16 @@ input[type="checkbox"] {
 
 .cards-1 .card-title {
     margin-bottom: 0.375rem;
+}
+
+.cards-1 i:before {
+    color: #6D96D2;
+    background: -moz-linear-gradient(top, #A5CCFF 0%, #6D96D2 100%);
+    background: -webkit-linear-gradient(top, #A5CCFF 0%, #6D96D2 100%);
+    background: linear-gradient(to bottom, #A5CCFF 0%, #6D96D2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /****************************/
@@ -636,7 +661,7 @@ input[type="checkbox"] {
 }
 
 .lightbox-basic .btn-solid-reg.mfp-close:hover {
-    color: #594cda;
+    color: #7c6eff;
 }
 /* end of action Button */
 
@@ -744,7 +769,7 @@ input[type="checkbox"] {
 .footer {
     padding-top: 6rem;
     padding-bottom: 3rem;
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(210, 208, 232, 1));
+    background: linear-gradient(#fff 0%, #dff 60%, #0F4C81 100%);
     text-align: center;
 }
 
@@ -782,7 +807,7 @@ input[type="checkbox"] {
 /*********************/
 .copyright {
     padding-top: 1.5rem;
-    background-color: #D2D0E8;
+    background-color: #0F4C81;
     text-align: center;
 }
 
@@ -813,7 +838,10 @@ a:hover.back-to-top {
 .ex-header {
     padding-top: 8.5rem;
     padding-bottom: 4rem;
-    background-color: #f1f9fc;
+    background-color: #0F4C81;
+}
+.ex-header h1 {
+    color: #ddd;
 }
 
 .ex-basic-1 .list-unstyled .fas {
@@ -823,7 +851,7 @@ a:hover.back-to-top {
 
 .ex-basic-1 .text-box {
     padding: 1.25rem 1.25rem 0.5rem 1.25rem;
-    background-color: #f1f9fc;
+    background-color: #e0deff;
 }
 
 .ex-cards-1 .card {
@@ -837,7 +865,7 @@ a:hover.back-to-top {
 }
 
 .ex-cards-1 .card .fa-stack-2x {
-    color: #ff6e84;
+    color: #0F4C81;
 }
 
 .ex-cards-1 .card .fa-stack-1x {
@@ -888,7 +916,7 @@ a:hover.back-to-top {
     .navbar.top-nav-collapse {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        background-color: #f1f9fc;
+        background-color: #0F4C81;
     }
 
     .offcanvas-collapse {
@@ -925,6 +953,19 @@ a:hover.back-to-top {
     }
 
     /* end of navigation */
+
+
+    .header h1 {
+        color: #555;
+    }
+    
+    .header p {
+        color: #555;
+    }
+    .header .btn-solid-lg {
+        border: 1px solid #0F4C81;
+        color: #0F4C81;    
+    }
 
     /* Details Lightbox */
     .lightbox-basic {
@@ -1002,6 +1043,10 @@ a:hover.back-to-top {
     .copyright .statement {
         text-align: right;
     }
+    .copyright * {
+        color: #fff;
+    }
+
     /* end of copyright */
 
     /* Extra Pages */
@@ -1009,11 +1054,13 @@ a:hover.back-to-top {
         display: inline-block;
         width: 306px;
         vertical-align: top;
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
 
     .ex-cards-1 .card:nth-of-type(3n + 2) {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
     /* end of extra pages */
 }
@@ -1073,10 +1120,6 @@ a:hover.back-to-top {
     }
     /* end of pricing */
 
-    /* Extra Pages */
-    .ex-cards-1 .card {
-        width: 328px;
-    }
 
     .ex-cards-1 .card:nth-of-type(3n + 2) {
         margin-right: 2.875rem;
