@@ -199,7 +199,7 @@
 	}
 
 	var language = NavigatorGetLanguage();
-    if(!location.search.includes('lang') && language != 'ja'){ 
+    if(!location.search.includes('lang') && language != 'ja' && !location.pathname.includes('index-en')){ 
 		location.href = './index-en.html'; 
 	}
 
