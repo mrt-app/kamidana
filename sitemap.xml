@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Japanese top page -->
+  <url>
+    <loc>https://kamidana.app/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English top page -->
+  <url>
+    <loc>https://kamidana.app/index-en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Story / Manifesto -->
+  <url>
+    <loc>https://kamidana.app/manifesto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy (EN) -->
+  <url>
+    <loc>https://kamidana.app/privacy-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
