@@ -1,519 +1,513 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="神棚アプリはあなたのスマートフォンに神棚をお祀りできるアプリです。願い事や日記を書いて自分の望む将来を引き寄せる仕組みを提供します。" />
+    <meta name="author" content="mrt" />
 
-        <!-- SEO Meta Tags -->
-        <meta name="description" content="神棚アプリはあなたのスマートフォンに神棚をお祀りできるアプリです。願い事や日記を書いて自分の望む将来を引き寄せる仕組みを提供します。" />
-        <meta name="author" content="mrt" />
+    <meta property="og:site_name" content="神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ" />
+    <meta property="og:site" content="https://kamidana.app" />
+    <meta property="og:title" content="神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ" />
+    <meta property="og:description" content="神棚アプリはあなたのスマートフォンに神棚をお祀りできるアプリです。願い事や日記を書いて自分の望む将来を引き寄せる仕組みを提供します。" />
+    <meta property="og:image" content="https://kamidana.app/images/app_icon.png" />
+    <meta property="og:url" content="https://kamidana.app" />
 
-        <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-        <meta property="og:site_name" content="神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ" /> <!-- website name -->
-        <meta property="og:site" content="https://kamidana.app" /> <!-- website link -->
-        <meta property="og:title" content="神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ" /> <!-- title shown in the actual shared post -->
-        <meta property="og:description" content="神棚アプリはあなたのスマートフォンに神棚をお祀りできるアプリです。願い事や日記を書いて自分の望む将来を引き寄せる仕組みを提供します。" /> <!-- description shown in the actual shared post -->
-        <meta property="og:image" content="https://kamidana.app/images/app_icon.png" /> <!-- image link, make sure it's jpg -->
-        <meta property="og:url" content="https://kamidana.app" /> <!-- where do you want your post to link to -->
-        <link rel="canonical" href="https://kamidana.app/index-en" />
-        <link rel="alternate" href="https://kamidana.app/index-en" hreflang="en" />
-        <link rel="alternate" href="https://kamidana.app/index.html" hreflang="ja" />
+    <link rel="canonical" href="https://kamidana.app/" />
+    <link rel="alternate" href="https://kamidana.app/index.html" hreflang="ja" />
+    <link rel="alternate" href="https://kamidana.app/index-en" hreflang="en" />
+    <link rel="icon" href="images/favicon.png" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/styles.css?20251201" rel="stylesheet" />
 
-        <!-- Webpage Title -->
-        <title>神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ</title>
+    <title>神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ</title>
 
-        <!-- Styles -->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-        <link href="css/fontawesome-all.css" rel="stylesheet" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-        <link href="css/swiper.css" rel="stylesheet" />
-        <link href="css/magnific-popup.css" rel="stylesheet" />
-        <link href="css/styles.css?20240824" rel="stylesheet" />
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Kamidana",
+        "alternateName": "Kamidana app",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, Android",
+        "description": "Kamidana is a Shinto-inspired self-care and gratitude diary app for nightly prayers, wishes and gentle purification rituals.",
+        "url": "https://kamidana.app/",
+        "image": "https://kamidana.app/images/app_icon.png",
+        "inLanguage": ["ja", "en"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "mrt app",
+            "url": "https://mrt-app.github.io/"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "USD"
+        },
+        "downloadUrl": [
+            "https://apps.apple.com/us/app/%E7%A5%9E%E6%A3%9A%E3%82%A2%E3%83%97%E3%83%AA/id1231920500",
+            "https://play.google.com/store/apps/details?id=com.gmail.mrt.another"
+        ]
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+        "@type": "Question",
+        "name": "神棚アプリは、宗教のアプリですか？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ、「信仰をすすめる」ためのアプリではありません。神道の世界観や暦の要素をお借りしながら、祈りや感謝・手放しといった心の動きを、日常のセルフコーチングとして使えるようデザインしています。神社や神道について詳しくなくても、「今日の自分を少しだけ大事にしたい」という気持ちがあれば、そのままお使いいただけます。"
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "無料で使えますか？プレミアムとの違いは？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "基本的な祈り・願い・お清め・日記の機能は、無料でお使いいただけます。プレミアムプランでは、バナー広告なし、カレンダーでの振り返り、選日の追加（吉日・凶日）、裏庭での特別な狐さんの様子など、「自分だけの静かなスペース」を整えやすくする機能をご用意しています。"
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "書いた内容は他の人に見られますか？データは安全ですか？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "あなたが書いた祈りや日記、願い事は、この端末の中だけに保存されます。クラウドのサーバーには送られず、ほかのユーザーから見えることもありません。また、これらの内容がAIサービスに渡されたり、AIの学習に使われることもありません。バックアップなどの追加機能を自分で利用しない限り、「あなたとあなたのスマホだけが知っているメモ」としてお使いいただけます。"
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "日記やアプリが続いた試しがないのですが、それでも大丈夫？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "神棚アプリは、「一行だけ書く」「ひとつだけ手放す」など、ごく短い所作を前提にデザインされています。毎日続けなくても大丈夫。思い出したときに開いて、一言だけ残す。それでも、ちゃんとあなたの心の軌跡になります。"
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "機種変更する時はどうすれば良いですか？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "アプリ内のバックアップ機能を使うことで、新しい端末に一部のデータを引き継ぐことができます。設定画面から Google Drive へバックアップを作成し、新しい端末で同じアカウントで神棚アプリをインストールしてから、バックアップの復元を行ってください。なお、端末の中だけに保存される項目もあるため、すべての状態が完全に同じにはならない場合があります。"
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "不具合などを報告したいです。",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "アプリの設定画面から「ご意見・お問い合わせ」よりご報告いただけます。もしくは、神棚アプリ連絡箱からご連絡いただくことも可能です。お使いの端末名や OS・アプリのバージョン、発生した状況などを書いていただけると、とても助かります。"
+        }
+        }
+    ]
+    }
+    </script>
 
-        <link rel="canonical" href="https://kamidana.app/index.html" />
-        <link rel="alternate" href="https://kamidana.app/index.html" hreflang="ja" />
-        <link rel="alternate" href="https://kamidana.app/index-en" hreflang="en" />
+    <script src="js/scripts.js?20251201"></script>
 
-        <!-- Favicon  -->
-        <link rel="icon" href="images/favicon.png" />
-    </head>
-    <body data-spy="scroll" data-target=".fixed-top">
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <div class="logo-area">
+          <div class="logo-mark" aria-hidden="true"></div>
+          <div class="logo-text">
+            <div class="logo-text-ja">神棚アプリ</div>
+            <div class="logo-text-en">Shinto-inspired self care</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#what">What</a>
+          <a href="#why">Why</a>
+          <a href="#how">How</a>
+          <a href="#features">Features</a>
+          <a href="#who">For You</a>
+          <a href="#premium">Premium</a>
+        </nav>
+        <div class="header-cta">
+          <a class="btn-ghost" href="index-en.html">EN / JA</a>
+        </div>
+      </header>
 
-        <!-- Navigation -->
-        <nav class="navbar fixed-top">
-            <div class="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap">
-                
-                <!-- Image Logo -->
-                <a class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="index.html">
-                    <img src="images/app_icon.png" alt="Shinto shrine digital representation in Kamidana app" class="h-8 inline" /><span> 神棚アプリ</span>
+      <!-- 0. Hero -->
+      <section class="hero" id="top">
+        <div class="hero-moon" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="hero-kicker">RITUALIZED SELF-CARE FOR QUIET HEARTS</div>
+            <h1 class="hero-title-ja">未来の自分と、そっと話すひととき。</h1>
+            <p class="hero-copy-ja">
+                忙しい日でも、気持ちが落ち着かない日でも。
+                自分を整える小さな瞬間は、いつもあなたの中にあります。
+                神棚アプリは、その瞬間をそっと取り出すための、小さな入口です。
+            </p>
+            <div class="hero-ctas">
+              <div class="store-badges">
+                <a class="store-badge" href="https://apps.apple.com/us/app/%E7%A5%9E%E6%A3%9A%E3%82%A2%E3%83%97%E3%83%AA/id1231920500" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-apple"></i>
+                  <span>App Store で入手</span>
                 </a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.gmail.mrt.another" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-google-play"></i>
+                  <span>Google Play で入手</span>
+                </a>
+              </div>
+            </div>
+          </div>
 
-                <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">
-                    <span class="navbar-toggler-icon inline-block w-8 h-8 align-middle"></span>
-                </button>
-
-                <div class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow lg:items-center" id="navbarsExampleDefault">
-                    <ul class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
-                        <li>
-                            <a class="nav-link page-scroll active" href="#header">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link page-scroll" href="#features">機能</a>
-                        </li>
-                        <li>
-                            <a class="nav-link page-scroll" href="#details">特徴</a>
-                        </li>
-                        <li>
-                            <a class="nav-link page-scroll" href="#download">ダウンロード</a>
-                        </li>
-                    </ul>
-                </div> <!-- end of navbar-collapse -->
-            </div> <!-- end of container -->
-        </nav> <!-- end of navbar -->
-        <!-- end of navigation -->
-
-        <!-- Header -->
-        <header id="header" class="header py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-32">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-                <div class="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
-                    <h1 class="h1 mb-5">あなたの心の拠り所</h1>
-                    <p class="p-large mb-8">前向きな気持ちで日々を過ごすためのサポート機能を提供します。</p>
-                    <a class="btn-solid-lg" href="https://apps.apple.com/us/app/%E7%A5%9E%E6%A3%9A%E3%82%A2%E3%83%97%E3%83%AA/id1231920500"><i class="fab fa-apple"></i>App Store</a>
-                    <a class="btn-solid-lg" href="https://play.google.com/store/apps/details?id=com.gmail.mrt.another"><i class="fab fa-google-play"></i>Google play</a>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-card">
+                <div class="hero-card-image">
+                  <img src="images/hero.png" alt="神棚アプリの画面イメージ" loading="lazy" />
                 </div>
-                <div class="xl:text-right">
-                    <img class="inline" src="images/header-smartphone.png" alt="alternative" />
-                </div>
-            </div> <!-- end of container -->
-        </header> <!-- end of header -->
-        <!-- end of header -->
-
-
-        <!-- Introduction -->
-        <div class="pt-12 pb-4 text-center">
-            <div class="container px-4 sm:px-8 xl:px-4">
-                <p class="mb-2 text-gray-600 text-2xl leading-10 lg:max-w-5xl lg:mx-auto">神棚アプリは、古来より続く神道の智慧を現代のテクノロジーと融合させ、日々の生活に根ざした自己内省と感謝の習慣を育むことで、あなたのメンタルヘルスを優しくサポートします。</p>
-            </div> <!-- end of container -->
+            </div>
+            <div class="hero-fox-shadow" aria-hidden="true"></div>
+          </div>
         </div>
-        <!-- end of introduction -->
+      </section>
 
+      <!-- 1. WHAT -->
+      <section id="what">
+        <div class="section-inner">
+          <div class="section-label">WHAT</div>
+          <h2 class="section-title">このアプリは何か？</h2>
+          <p class="section-subtitle">一行で心を整える、短いセルフコーチングアプリ。</p>
+          <div class="section-body">
+            神棚アプリは、祈りや願いを書く動作を、
+            「未来の自分との小さな会話」として再設計したアプリです。
+            特別な準備も、大げさな儀式もいりません。
+            ただ、ひとつの気持ちをそっと置くだけで、心はすっと軽くなります。
 
-        <!-- Features -->
-        <div id="features" class="cards-1">
-            <div class="container px-4 sm:px-8 xl:px-4">
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-edit text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">日記</h5>
-                        <p class="mb-4">今日一日の感謝の気持ちは、日記にして神様に伝えることができます。<br>画面ロック機能付きで安心に使えます。</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-star text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">願い事</h5>
-                        <p class="mb-4">お願い事を絵馬にして願う事ができます。<br>成功に自信付くとともに、周囲への感謝の気持ちに気付くでしょう。</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-hand-holding-heart text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">お祓い</h5>
-                        <p class="mb-4">今日どうしても辛いことがあったなら、人形代に書いて流すこともできます。一度手放したものは消えてなくなります</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-thumbs-up text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">おみくじ</h5>
-                        <p class="mb-4">一日一回、今日の運勢を占います。</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-comment-dots text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">格言</h5>
-                        <p class="mb-4">今日一日を勇気付ける心強い言葉が入っています。</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <i class="fas fa-smile-wink text-5xl"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">お供え物</h5>
-                        <p class="mb-4">ワンタップで簡単。通知機能で忘れることもありません。</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-1 -->
-        <!-- end of features -->
-
-
-        <!-- Details 1 -->
-        <div id="details" class="pt-12 pb-16 lg:pt-16">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-                <div class="lg:col-span-5">
-                    <div class="mb-16 lg:mb-0 xl:mt-16">
-                        <h2 class="mb-6">使い方はとてもシンプル</h2>
-                        <ul class="list mb-7 space-y-2">
-                            <li class="flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div>神棚のお宮の中にあなたの大切な神様をお祀りください。</div>
-                            </li>
-                            <li class="flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div>一日のおわりに感謝の気持ちや気づきを日記に記していきましょう。</div>
-                            </li>
-                            <li class="flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div>行動しましょう。いつでも戻れる場所があります。</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="lg:col-span-7">
-                    <div class="xl:ml-14" style="text-align: center;">
-                        <img class="inline" style="height:400px;" src="images/smartphone.png" alt="alternative" />
-                    </div>
-                </div> <!-- end of col -->
-            </div> <!-- end of container -->
+            祈りというより、「今日の自分にそっとメモを書く」ような感覚で。
+            あなたのペースで、気軽に続けられる心のノートです。
+          </div>
         </div>
-        <!-- end of details 1 -->
+      </section>
 
+      <!-- 2. WHY -->
+      <section id="why">
+        <div class="section-inner">
+          <div class="section-label">WHY</div>
+          <h2 class="section-title">なぜ今、必要なのか？</h2>
+          <p class="section-subtitle">心のノイズが多すぎる時代だから。</p>
+          <div class="section-body">
+            SNS、仕事、人間関係、期待、疲れ。
+            情報が溢れるほど、心の中の声はかき消されていきます。
+            「本当はどう感じているのか」をゆっくり確かめる前に、
+            次のタスクや通知が、またあなたを急かしてきます。
 
-        <!-- Details 2 -->
-        <div class="py-24">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-                <div class="lg:col-span-7">
-                    <div class="mb-12 lg:mb-0 xl:mr-14">
-                        <img class="inline" src="images/details-3.png" alt="alternative" />
-                    </div>
-                </div> <!-- end of col -->
-                <div class="lg:col-span-5">
-                    <div class="xl:mt-12">
-                        <h2 class="mb-6">裏庭</h2>
-                        <p class="mb-4">裏庭へ行くとお狐さまがいます。そこでは鈴やお守りを受け取ることができ、またそれをお狐さまにあげることができます。</p>
-                        <a class="btn-solid-reg popup-with-move-anim mr-1.5" href="#details-lightbox">裏庭のストーリーを見る</a>
-                    </div>
-                </div> <!-- end of col -->
-            </div> <!-- end of container -->
+            でも、ほんの一瞬だけでも自分に戻る時間があれば、
+            生きやすさは、静かに、確かに変わっていきます。
+            神棚アプリは、その「一瞬」をつくるための、とても小さな仕掛けです。
+          </div>
         </div>
-        <!-- end of details 2 -->
+      </section>
 
-        <!-- Testimonials -->
-        <div class="slider-1 py-32 bg-gray">
-            <div class="container px-4 sm:px-8">
-                <h2 class="mb-12 text-center lg:max-w-xl lg:mx-auto">メディア掲載・紹介情報</h2>
+      <!-- 3. HOW -->
+      <section id="how">
+        <div class="section-inner">
+          <div class="section-label">HOW</div>
+          <h2 class="section-title">どうやって心を整える？</h2>
+          <p class="section-subtitle">短文・ワンタップで、心の方向を整える。</p>
+          <div class="section-body">
+            ・ひとつ手放す
+            ・小さく願う
+            ・今日の自分に声をかける
 
-                <!-- Card Slider -->
-                <div class="slider-container">
-                    <div class="swiper-container card-slider">
-                        <div class="swiper-wrapper">
-                            
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="italic mb-3">毎日の良いことを見返すだけで、なんだか心が穏やかな気持ちなりますね♪</p>
-                                        <p class="testimonial-author">神棚アプリ | NTTドコモ dアプリ＆レビュー</p>                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
+            そんな「たった数秒の所作」が、
+            いつのまにか心の中の大切な軸を整えてくれます。
 
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="italic mb-3">これぞ次世代の神棚 オンラインで毎日お参り</p>
-                                        <p class="testimonial-author">ホットペッパー 2020年1月号</p>                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="italic mb-3">可愛さの相乗効果で毎日ほっこり癒やされています。</p>
-                                        <p class="testimonial-author">RfreeK Vol.126（2021年3月号）</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="italic mb-3">今日の失敗もキレイに忘れられそう…！</p>
-                                        <p class="testimonial-author">ダイエットも美容も神頼み!? スマホに神棚を作る新感覚ツール「神棚アプリ」|ダイエット、フィットネス、ヘルスケアのことならFYTTE-フィッテ</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="italic mb-3">神棚アプリがあなたの「心の支え」に　毎日を優しく穏やかに過ごそう</p>
-                                        <p class="testimonial-author">【Appliv】神棚アプリ</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                        </div> <!-- end of swiper-wrapper -->
-
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <!-- end of add arrows -->
-
-                    </div> <!-- end of swiper-container -->
-                </div> <!-- end of slider-container -->
-                <!-- end of card slider -->
-
-            </div> <!-- end of container -->
-        </div> <!-- end of slider-1 -->
-        <!-- end of testimonials -->
-
-        <!-- Details Lightbox -->
-        <!-- Lightbox -->
-        <div id="details-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
-            <div>
-                <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-                <div class="mb-12">
-                    <img class="inline rounded-lg max-h-40 w-auto" src="https://kamidana.app/images/perspective.png" alt="Kitsune-san" />
-                </div>
-
-                <h3 class="mb-2">お狐さまの誕生</h3>
-                <hr class="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-blue-600" />
-                <p>それはある祭りの日の出来事。</p>
-                <p>街の氏子たちに担がれた小さな神輿は稲荷神社の境内に入って行きました。</p>
-                <p>石畳の参道に沿って鳥居をくぐり、そのまま真っ直ぐ本殿へ向かう、はずでしたが、何故かその日は少しずつ道の脇へと外れていってしまったのです。</p>
-                <p>神輿はそのまま止まる事なく、とうとう氏子の1人がその先にあった石の狐像との間に挟まれてしまいました。</p>
-                <p>硬い石像と神輿の担ぎ棒に体が押し潰されそうになり、痛みのあまり叫び声を上げると、突然、像の台座が動いて狐像は地面に落ちました。</p>
-                <p>落ちたはずみに狐像の長い鼻は欠けて取れ、同時に、白くて丸い動物が飛び出てきました。</p>
-                <br>
-                <p>その動物は、鼻の長くない白いお狐さまでした。</p>
-                <p>その場にいた一同は、自分たちの引き起こした災いに恐れ慄くとともに、このお狐さまがまた元の姿に戻れるまで、神社の社務所へ療養で住まわすことにしたのです。</p>
-
-            
-                <h4 class="mb-2 mt-6">お狐さまの生活</h4>            
-                <p>社務所に住み込む事になったお狐さまは、怒るわけでもなく悲しむわけでもなく、ただただ毎日を過ごしています。</p>
-                <p>ときどき、持ち込まれた家電を使って快適に過ごしたり、夜に開かれる動物たちのカフェに顔を出したり、温かい時期には咲いている花を摘んで見せたり、貰った食べ物を美味しく食べたりと、それなり楽しく過ごしているようです。</p>
-                <p>のんびりするだけでなく、決まった時間になると黙々と勉強にも励みます。商売の神様の使いとして人々の願い事を叶えるために頑張っているようです。（今は療養中で使いには行けませんが。）</p>
-                <p>しかしながら決してただのポジティブ元気なお狐さまなのではありません。夜明け前は自分の存在が何であるかに想いを馳せて、ただただ空を見つめます。</p>
-                <p>月が満ち欠けするように、常時満月のように満たされることは稀であり、お狐さまも例外ではなかったのです。</p>
-            
-                <h4 class="mb-2 mt-6">神棚アプリとお狐さま</h4>
-                <p>アプリの裏庭にはいつもお狐さまがいます。そこでは鈴やお守りを受け取ることができ、またそれをお狐さまにあげることができます。</p>
-                <p>あなたが困ったときに、弱ったときに、苦しいときに、</p>
-                <p>お狐さまの存在が、それを許し、少しだけ前へ進むきっかけとなりますように。</p>
-
-                
-                <div class="text-center mt-10">
-                    <button class="btn-outline-reg mfp-close as-button" type="button">閉じる</button>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of lightbox-basic -->
-        <!-- end of lightbox -->
-        <!-- end of details lightbox -->
-
-        <!-- Details 4 -->
-        <div class="pt-16 pb-12">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-                
-                <div class="lg:col-span-12">
-                    <h2 class="mb-6">よくある質問</h2>
-
-                    <!-- Cards -->
-                    <div class="ex-cards-1 py-4">
-                        <div class="container px-4 sm:px-8">
-                            
-                            <!-- Card -->
-                            <div class="card">
-                                <ul class="list-unstyled">
-                                    <li class="flex">
-                                        <span class="fa-stack">
-                                            <span class="fas fa-circle fa-stack-2x"></span>
-                                            <span class="fa-stack-1x">?</span>
-                                        </span>
-                                        <div class="flex-1 ml-3">
-                                            <h5 class="mt-0.5 mb-1.5">灯籠はいつ表示されますか？</h5>
-                                            <p class="mb-4">毎日お参りを続けると、あるとき一日表示されます。夜には明かりが灯ります。</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div> <!-- end of card -->
-                            <!-- end of card -->
-
-                            <!-- Card -->
-                            <div class="card">
-                                <ul class="list-unstyled">
-                                    <li class="flex">
-                                        <span class="fa-stack">
-                                            <span class="fas fa-circle fa-stack-2x"></span>
-                                            <span class="fa-stack-1x">?</span>
-                                        </span>
-                                        <div class="flex-1 ml-3">
-                                            <h5 class="mt-0.5 mb-1.5">機種変更する時はどうすれば良いですか？</h5>
-                                            <p class="mb-4">Google Driveを利用したバックアップ機能により新たにお祀りした神棚へ一部データを引き継ぐことが可能です。</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div> <!-- end of card -->
-                            <!-- end of card -->
-
-                            <!-- Card -->
-                            <div class="card">
-                                <ul class="list-unstyled">
-                                    <li class="flex">
-                                        <span class="fa-stack">
-                                            <span class="fas fa-circle fa-stack-2x"></span>
-                                            <span class="fa-stack-1x">?</span>
-                                        </span>
-                                        <div class="flex-1 ml-3">
-                                            <h5 class="mt-0.5 mb-1.5">関心のない広告ばかり表示されます。</h5>
-                                            <p class="mb-4">
-                                                お使いのスマートフォンのプライバシー設定にてトラッキングの許可をすることで、よりあなたの関心に合わせた広告が表示されます。
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div> <!-- end of card -->
-                            <!-- end of card -->
-
-                            <!-- Card -->
-                            <div class="card">
-                                <ul class="list-unstyled">
-                                    <li class="flex">
-                                        <span class="fa-stack">
-                                            <span class="fas fa-circle fa-stack-2x"></span>
-                                            <span class="fa-stack-1x">?</span>
-                                        </span>
-                                        <div class="flex-1 ml-3">
-                                            <h5 class="mt-0.5 mb-1.5">不具合等の報告をしたいです。</h5>
-                                            <p class="mb-4">
-                                                アプリの設定画面からご報告いただくか、<a href="https://forms.gle/BaMNz2GXqBPWwYtW9" class="text-blue-600 dark:text-blue-500 underline">神棚アプリ連絡箱</a>よりご連絡いただけますと幸いです。
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div> <!-- end of card -->
-                            <!-- end of card -->
-
-                        </div> <!-- end of container -->
-                    </div> <!-- end of ex-cards-1 -->
-                    <!-- end of cards -->
-                </div> <!-- end of col -->
-            </div> <!-- end of container -->
+            むずかしい自己分析ではなく、
+            「今の自分に、ひと言だけやさしい言葉をかける」。
+            そんな軽さで使える、日々のセルフコーチングです。
+          </div>
         </div>
-        <!-- end of details 4 -->
+      </section>
 
+      <!-- 4. FEATURES -->
+      <section id="features">
+        <div class="section-inner">
+          <div class="section-label">FEATURES</div>
+          <h2 class="section-title">あなたのための静かな心の部屋。</h2>
+          <p class="section-subtitle">大げさな儀式はいらない、小さな所作だけ。</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-title">願い事を書く</div>
+              <div class="feature-desc">
+                未来の自分へ向ける、「やさしい方向づけ」のメモ。
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-title">お清め（手放し）</div>
+              <div class="feature-desc">
+                しんどさや不安を、いったん外に置いておくためのボックス。
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-title">参拝日記</div>
+              <div class="feature-desc">
+                今日を振り返りながら、自分に「静かなコーチング」を。
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-title">狐さん</div>
+              <div class="feature-desc">
+                寄り添ってくれる、小さな相棒のキャラクター。
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Conclusion -->
-        <div id="download" class="basic-5">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2">
-                <div class="mb-16 lg:mb-0">
-                    <img src="images/conclusion-smartphone.png" alt="alternative" />
-                </div>
-                <div class="lg:mt-24 xl:mt-44 xl:ml-12">
-                    <p class="mb-9 text-gray-800 text-3xl leading-10">神棚アプリを今すぐインストール。<br>無料で課金もありません。</p>
-                    <a class="btn-solid-lg" href="https://apps.apple.com/us/app/%E7%A5%9E%E6%A3%9A%E3%82%A2%E3%83%97%E3%83%AA/id1231920500"><i class="fab fa-apple"></i>iPhone / iPad</a>
-                    <a class="btn-solid-lg" href="https://play.google.com/store/apps/details?id=com.gmail.mrt.another"><i class="fab fa-google-play"></i>Android</a>
-                </div>
-            </div> <!-- end of container -->
-        </div> <!-- end of basic-5 -->
-        <!-- end of conclusion -->
+      <!-- 5. WHO -->
+      <section id="who">
+        <div class="section-inner">
+          <div class="section-label">FOR YOU</div>
+          <h2 class="section-title">誰のためのアプリ？</h2>
+          <p class="section-subtitle">がんばりすぎてしまう人へ。</p>
+          <div class="section-body">
+            強く見せ続ける日も、うまくいかない日も。
+            「大丈夫」と笑いながら、本当は少しだけ疲れているときも。
+            それでもきちんとやろうとしてしまう、まじめなあなたへ。
 
+            神棚アプリは、ただ少しだけ、自分にやさしくなりたい人のための、
+            ポケットの中にある小さな休憩所のようなアプリです。
+          </div>
+        </div>
+      </section>
 
-        <!-- Footer -->
-        <div class="footer">
-            <div class="container px-4 sm:px-8">
-                <p class="mb-8 lg:max-w-3xl lg:mx-auto">神棚アプリは、人生を前向きにするためのお手伝いをするというコンセプトに基づいて開発しています。<br>神棚にまつわる習慣のうち、神という概念を通じたセルフコーチングによって自ら望みを叶えていく仕組みをアプリの機能へ活かしています。</p>
-                <div class="social-container">
-                    <span class="fa-stack">
-                        <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fkamidana.app">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Fkamidana.app">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-twitter fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fkamidana.app&description=Kamidana%20app">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="https://www.instagram.com/kamidana.app/">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-instagram fa-stack-1x"></i>
-                        </a>
-                    </span>
-                </div> <!-- end of social-container -->
-            </div> <!-- end of container -->
-        </div> <!-- end of footer -->
-        <!-- end of footer -->
+      <!-- 6. EXPERIENCE -->
+      <section id="experience">
+        <div class="section-inner">
+          <div class="section-label">FEELING</div>
+          <h2 class="section-title">どんな気持ちになれる？</h2>
+          <p class="section-subtitle">ふっと軽くなる。少し前を向ける。</p>
+          <div class="section-body">
+            書いた瞬間、願った瞬間、手放した瞬間。
+            たった数秒の動作でも、心は確かに変わります。
+            「今日はここまでがんばったな」と思えるだけで、
+            明日の自分に向けるまなざしも、少しやわらかくなります。
 
+            それが、祈りのミニマリズム。
+            大げさではない、でもちゃんと効いてくる心の習慣です。
+          </div>
+        </div>
+      </section>
 
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-3">
-                <ul class="mb-4 list-unstyled p-small">
-                    <li class="mb-2"><a href="privacy-policy.html" class="text-blue-200 underline">Privacy Policy</a></li>
-                </ul>
-            </div> 
-            <div class="container text-center">
-                <p class="pb-2 p-small text-blue-200">Copyright © <a href="https://mrt-app.github.io/" class="underline">mrt app</a></p>
-            </div> 
-        </div> <!-- end of copyright -->
-        <!-- end of copyright -->
+      <!-- 7. WORLDVIEW -->
+      <section id="worldview">
+        <div class="section-inner">
+          <div class="section-label">WORLDVIEW</div>
+          <h2 class="section-title">祈りのある世界観</h2>
+          <p class="section-subtitle">軽やかな祈り文化を、あなたの日常へ。</p>
+          <div class="section-body">
+            神道の「静けさ」や「余白」の美意識を借りながら、
+            祈り・清め・願いという、昔からある心の動きを、
+            現代のミニマルな所作に翻訳したのが、神棚アプリです。
 
+            宗教を押しつけることも、スピリチュアルに傾きすぎることもなく。
+            ただ、「自分の心をていねいに扱う」ための文化としての祈りを、
+            軽やかに、日常の中に持ち帰るためのデザインを目指しました。
+          </div>
+        </div>
+      </section>
 
-        <!-- Scripts -->
-        <script src="js/jquery.min.js"></script> <!-- jQuery for JavaScript plugins -->
-        <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-        <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-        <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-        <script src="js/scripts.js"></script> <!-- Custom scripts -->
-    </body>
+      <!-- 8. RESULTS / HABIT -->
+      <section id="results">
+        <div class="section-inner">
+          <div class="section-label">HABIT</div>
+          <h2 class="section-title">なぜ続けられるのか？</h2>
+          <p class="section-subtitle">長く続くのは、短くて優しいから。</p>
+          <div class="section-body">
+            習慣は、軽いものから始まります。
+            「これなら、今の自分でもできる」と思えることだけが、
+            無理なく日々に溶け込んでいきます。
+
+            そして、続くのは「気持ちいい瞬間」があるから。
+            一行書き終えたあと、画面を閉じる前の、あの静かな満足感。
+            神棚アプリは、その小さなご褒美の時間をつくります。
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. PREMIUM -->
+      <section id="premium">
+        <div class="section-inner">
+          <div class="section-label">PREMIUM</div>
+          <h2 class="section-title">プレミアムでできること</h2>
+          <p class="section-subtitle">自分のための、もっと静かな場所。</p>
+          <div class="section-body">
+            いつもの神棚アプリを、少しだけ「自分専用のお部屋」に近づけたい方へ。
+            プレミアムプランでは、心に集中しやすい環境づくりをお手伝いします。
+          </div>
+          <div class="premium-tags">
+            <span class="premium-tag">バナー広告なし</span>
+            <span class="premium-tag">カレンダーで振り返り</span>
+            <span class="premium-tag">選日の追加（吉日・凶日）</span>
+            <span class="premium-tag">裏庭の特別な狐さん</span>
+            <span class="premium-tag">願い事の鑑定機能</span>
+            <span class="premium-tag">マイ儀式が作れるルーティン機能</span>
+            <span class="premium-tag">自分を見つめ直す日記雛形でのワーク</span>
+            <span class="premium-tag">吉方位・色付け機能</span>
+            <span class="premium-tag">お供え時の特別な体験の開放</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. FOX DEN -->
+      <section id="backyard">
+        <div class="section-inner">
+          <div class="section-label">FOX DEN</div>
+          <h2 class="section-title">裏庭と狐さんの、小さな物語。</h2>
+          <p class="section-subtitle">がんばらなくていい時間をつくる、小さな裏側の庭。</p>
+          <div class="section-body">
+            画面の中の「裏庭」には、石像から生まれた小さな狐さんが暮らしています。
+
+            プレゼントを贈ったり、インテリアを整えたり、
+            ただ眺めているだけの日があっても大丈夫。
+
+            裏庭は、「がんばらなくていい時間」をつくる場所です。
+            なにかを成しとげるためではなく、
+            ただ少し、自分の気持ちに寄り添うための空き地として、
+            神棚アプリの奥にそっと用意しました。
+          </div>
+          <div class="backyard-cta">
+            <a href="fox-den-story.html" class="btn-ghost btn-backyard">
+              裏庭のストーリーを見る
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. MEDIA -->
+      <section id="media">
+        <div class="section-inner">
+          <div class="section-label">MEDIA</div>
+          <h2 class="section-title">メディア掲載・ご紹介</h2>
+          <p class="section-subtitle">心のケアやライフスタイルをテーマにした場で、少しずつご紹介いただいています。</p>
+          <div class="section-body">
+            神棚アプリは、以下のメディアや雑誌、Webサイトでご紹介いただきました。
+
+            ・NTTドコモ「dアプリ＆レビュー」
+            　毎日の良いことを振り返ることで、心が穏やかになるアプリとして紹介されました。
+            ・ホットペッパー 2020年1月号
+            　「次世代の神棚」として、オンラインで毎日お参りできるツールとして掲載されました。
+            ・RfreeK Vol.126（2021年3月号）
+            　可愛らしいデザインと癒やしの世界観についてレビューいただきました。
+            ・FYTTE（フィッテ）Web
+            　ダイエットや美容をがんばる人の「心の支え」になるセルフケアアプリとして紹介されています。
+            ・Appliv
+            　「毎日を優しく穏やかに過ごすための心の支えになるアプリ」として掲載されています。
+
+            取材・レビュー・タイアップ等のお問い合わせは、
+            ページ下部のお問い合わせ窓口よりご連絡ください。
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. FAQ -->
+      <section id="faq">
+        <div class="section-inner">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">よくある質問</h2>
+          <p class="section-subtitle">安心して使ってもらうために、よくいただく質問をまとめました。</p>
+          <div class="section-body">
+            <p>
+              <strong>Q. 神棚アプリは、宗教のアプリですか？</strong><br />
+              A. いいえ、「信仰をすすめる」ためのアプリではありません。
+              神道の世界観や暦の要素をお借りしながら、
+              祈りや感謝・手放しといった心の動きを、
+              日常のセルフコーチングとして使えるようにデザインしています。
+              神社や神道について詳しくなくても、
+              「今日の自分を大事にしたい」という気持ちがあればそのままお使いいただけます。
+            </p>
+            <p>
+              <strong>Q. 無料で使えますか？プレミアムとの違いは？</strong><br />
+              A. 基本的な祈り・願い・お清め・日記の機能は、無料でお使いいただけます。
+              プレミアムプランでは、バナー広告なし、カレンダーでの振り返り、
+              選日の追加（吉日・凶日）、裏庭での特別な狐さんの様子など、
+              「自分だけの静かなスペース」を整えやすくする機能をご用意しています。
+            </p>
+            <p>
+              <strong>Q. 書いた内容は他の人に見られますか？データは安全ですか？</strong><br />
+              A. あなたが書いた祈りや日記、願い事は、この端末の中だけに保存されます。
+              クラウドのサーバーには送られず、ほかのユーザーから見えることもありません。
+              また、これらの内容がAIサービスに渡されたり、AIの学習に使われることもありません。
+              バックアップなどの追加機能を自分で利用しない限り、
+              「あなたとあなたのスマホだけが知っているメモ」としてお使いいただけます。
+            </p>
+            <p>
+              <strong>Q. 日記やアプリが続いた試しがないのですが、それでも大丈夫？</strong><br />
+              A. 神棚アプリは、「一行だけ書く」「ひとつだけ手放す」など、
+              ごく短い所作を前提にデザインされています。
+              毎日続けなくても大丈夫。
+              思い出したときに開いて、一言だけ残す。
+              それでも、ちゃんとあなたの心の軌跡になります。
+            </p>
+            <p>
+              <strong>Q. 機種変更する時はどうすれば良いですか？</strong><br />
+                A. アプリ内のバックアップ機能を使うことで、新しい端末に一部のデータを引き継ぐことができます。
+                設定画面から Google Drive へバックアップを作成し、新しい端末で同じアカウントで神棚アプリをインストールしてから、バックアップの復元を行ってください。
+                なお、端末の中だけに保存される項目もあるため、すべての状態が完全に同じにはならない場合があります。
+            </p>
+            <p>
+              <strong>Q. 不具合などを報告したいです。</strong><br />
+                A. アプリの設定画面から「ご意見・お問い合わせ」よりご報告いただけます。
+                もしくは、<a href="https://forms.gle/BaMNz2GXqBPWwYtW9" rel="noopener noreferrer">神棚アプリ連絡箱</a>からご連絡いただくことも可能です。
+                お使いの端末名や OS・アプリのバージョン、発生した状況などを書いていただけると、とても助かります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. CTA -->
+      <section id="cta" class="final-cta">
+        <div class="section-inner">
+          <div class="section-label">START</div>
+          <h2 class="section-title">未来の自分と、少しだけ話してみませんか？</h2>
+          <p>
+            たくさん書かなくて大丈夫。正しい言葉を探さなくても大丈夫。
+            今日はただ、一行だけ。
+          </p>
+          <p>
+            その一行が、未来のあなたの支えになりますように。
+          </p>
+          <div class="hero-ctas">
+              <div class="store-badges">
+                <a class="store-badge" href="https://apps.apple.com/us/app/%E7%A5%9E%E6%A3%9A%E3%82%A2%E3%83%97%E3%83%AA/id1231920500" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-apple"></i>
+                  <span>App Store で入手</span>
+                </a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.gmail.mrt.another" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-google-play"></i>
+                  <span>Google Play で入手</span>
+                </a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div>© <a href="https://mrt-app.github.io/" class="underline">mrt app</a></div>
+        <div class="footer-links">
+            <a href="https://forms.gle/58NZATgXaHkr52Bz7" target="_blank" rel="noopener noreferrer">
+            お問い合わせフォーム
+            </a>
+            <span class="footer-separator">／</span>
+            <a href="https://www.instagram.com/kamidana.app/" target="_blank" rel="noopener noreferrer">
+            公式Instagram
+            </a>
+            <span class="footer-separator">／</span>
+            <a href="privacy-policy.html" rel="noopener noreferrer">
+            プライバシーポリシー
+            </a>
+        </div>
+      </footer>
+
+    </main>
+  </body>
 </html>
