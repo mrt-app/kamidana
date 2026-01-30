@@ -43,16 +43,65 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Journal index -->
+  <!-- Journal index (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Journal language selector -->
   <url>
     <loc>https://kamidana.app/journal/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Journal article -->
+  <!-- Journal index (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/modern-kamidana.html</loc>
+    <loc>https://kamidana.app/journal/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Journal article (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/modern-kamidana.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal article (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/modern-kamidana.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+    <!-- Journal article (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/oshi-kamidana.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal article (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/oshi-kamidana.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal article (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/oharai-journal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal article (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/oharai-journal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

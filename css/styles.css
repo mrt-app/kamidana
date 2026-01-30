@@ -631,6 +631,28 @@ footer.site-footer a {
   text-align: left;
 }
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  margin-top: 1em;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 .journal-list {
   display: grid;
   gap: 18px;
@@ -694,6 +716,17 @@ footer.site-footer a {
   margin: 12px 0 16px;
   font-size: 1.8rem;
   line-height: 1.4;
+}
+
+.journal-hero-image {
+  margin: 0 0 18px;
+}
+
+.journal-hero-image img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 16px 30px rgba(130, 106, 170, 0.12);
 }
 
 .journal-article section {
