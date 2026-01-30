@@ -43,4 +43,18 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Journal index -->
+  <url>
+    <loc>https://kamidana.app/journal/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Journal article -->
+  <url>
+    <loc>https://kamidana.app/journal/modern-kamidana.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
