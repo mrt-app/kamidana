@@ -106,4 +106,18 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Journal article (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/morning-routine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal article (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/morning-routine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
