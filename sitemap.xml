@@ -134,4 +134,11 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Journal article (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/why-shinto-has-no-bible.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
