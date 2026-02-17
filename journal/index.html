@@ -1,75 +1,86 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kamidana Journal language selection." />
-    <meta name="author" content="mrt" />
 
-    <meta property="og:site_name" content="Kamidana | Journal" />
-    <meta property="og:title" content="Kamidana | Journal" />
-    <meta property="og:description" content="Select Japanese or English for the Kamidana Journal." />
-    <meta property="og:image" content="https://kamidana.app/images/app_icon.png" />
-    <meta property="og:url" content="https://kamidana.app/journal/" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kamidana Journal language selection." />
+  <meta name="author" content="mrt" />
 
-    <link rel="canonical" href="https://kamidana.app/journal/" />
-    <link rel="alternate" href="https://kamidana.app/journal/en/" hreflang="en" />
-    <link rel="alternate" href="https://kamidana.app/journal/ja/" hreflang="ja" />
-    <link rel="icon" href="../images/favicon.png" />
-    <link href="../css/fontawesome-all.css" rel="stylesheet" />
-    <link href="../css/styles.css?20260201" rel="stylesheet" />
+  <meta property="og:site_name" content="Kamidana | Journal" />
+  <meta property="og:title" content="Kamidana | Journal" />
+  <meta property="og:description" content="Select Japanese or English for the Kamidana Journal." />
+  <meta property="og:image" content="https://kamidana.app/images/app_icon.png" />
+  <meta property="og:url" content="https://kamidana.app/journal/" />
 
-    <title>Journal | Kamidana</title>
-  </head>
-  <body>
-    <main>
-      <header class="site-header">
-        <div class="logo-area">
-          <div class="logo-mark" aria-hidden="true"></div>
-          <div class="logo-text">
-            <div class="logo-text-ja">神棚アプリ</div>
-            <div class="logo-text-en">Shinto-inspired self care</div>
-          </div>
+  <link rel="canonical" href="https://kamidana.app/journal/" />
+  <link rel="alternate" href="https://kamidana.app/journal/en/" hreflang="en" />
+  <link rel="alternate" href="https://kamidana.app/journal/ja/" hreflang="ja" />
+  <link rel="icon" href="../images/favicon.png" />
+  <link href="../css/fontawesome-all.css" rel="stylesheet" />
+  <link href="../css/styles.css?20260201" rel="stylesheet" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE51BN0CV9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-KE51BN0CV9');
+  </script>
+  <title>Journal | Kamidana</title>
+</head>
+
+<body>
+  <main>
+    <header class="site-header">
+      <div class="logo-area">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="logo-text">
+          <div class="logo-text-ja">神棚アプリ</div>
+          <div class="logo-text-en">Shinto-inspired self care</div>
         </div>
-        <div class="header-cta">
-          <a class="btn-ghost" href="../index.html">Home</a>
-        </div>
-      </header>
+      </div>
+      <div class="header-cta">
+        <a class="btn-ghost" href="../index.html">Home</a>
+      </div>
+    </header>
 
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">Journal</span>
-      </nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Journal</span>
+    </nav>
 
-      <section class="journal-hero">
-        <div class="section-inner">
-          <div class="section-label">JOURNAL</div>
-          <h1 class="section-title">Select Language</h1>
-          <p class="section-subtitle">
-            日本語と英語のジャーナルをご用意しています。言語を選択してください。
-          </p>
-        </div>
-      </section>
+    <section class="journal-hero">
+      <div class="section-inner">
+        <div class="section-label">JOURNAL</div>
+        <h1 class="section-title">Select Language</h1>
+        <p class="section-subtitle">
+          日本語と英語のジャーナルをご用意しています。言語を選択してください。
+        </p>
+      </div>
+    </section>
 
-      <section>
-        <div class="section-inner">
-          <div class="journal-list">
-            <article class="journal-card">
-              <h2 class="journal-card-title">
-                <a href="ja/index.html">日本語で読む</a>
-              </h2>
-              <p class="journal-card-summary">日本語の記事一覧へ移動します。</p>
-            </article>
-            <article class="journal-card">
-              <h2 class="journal-card-title">
-                <a href="en/index.html">Read in English</a>
-              </h2>
-              <p class="journal-card-summary">Go to the English journal index.</p>
-            </article>
-          </div>
+    <section>
+      <div class="section-inner">
+        <div class="journal-list">
+          <article class="journal-card">
+            <h2 class="journal-card-title">
+              <a href="ja/index.html">日本語で読む</a>
+            </h2>
+            <p class="journal-card-summary">日本語の記事一覧へ移動します。</p>
+          </article>
+          <article class="journal-card">
+            <h2 class="journal-card-title">
+              <a href="en/index.html">Read in English</a>
+            </h2>
+            <p class="journal-card-summary">Go to the English journal index.</p>
+          </article>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
