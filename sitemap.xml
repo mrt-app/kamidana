@@ -169,5 +169,61 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Journal: Digital Detox (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/digital-detox-omairi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Digital Detox (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/digital-detox-omairi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Teinei Kurashi (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/teinei-kurashi-omairi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Teinei Kurashi (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/teinei-kurashi-omairi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Asakatsu Routine (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/asakatsu-routine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Asakatsu Routine (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/asakatsu-routine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Mindfulness Nakaima (JA) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/mindfulness-nakaima.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Journal: Mindfulness Nakaima (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/mindfulness-nakaima.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
 
