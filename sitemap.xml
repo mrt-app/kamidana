@@ -225,5 +225,26 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Journal: Omamori Guide (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/omamori-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal: Kamidana Setup Guide (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/kamidana-setup-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal: Shrine Visit Guide (EN) -->
+  <url>
+    <loc>https://kamidana.app/journal/en/shrine-visit-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
 
