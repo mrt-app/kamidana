@@ -18,7 +18,8 @@
   <link rel="alternate" href="https://kamidana.app/index.html" hreflang="ja" />
   <link rel="alternate" href="https://kamidana.app/index-en" hreflang="en" />
   <link rel="icon" href="images/favicon.png" />
-  <link href="css/fontawesome-all.css" rel="stylesheet" />
+  <link rel="preload" href="css/fontawesome-all.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="css/fontawesome-all.css" rel="stylesheet" /></noscript>
   <link href="css/styles.css?20251201" rel="stylesheet" />
 
   <title>神棚アプリ | スマートフォンに神棚が祀れるiPhone/Android用のセルフコーチングアプリ</title>
@@ -108,7 +109,7 @@
     }
     </script>
 
-  <script src="js/scripts.js?20251201"></script>
+  <script src="js/scripts.js?20251201" defer></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE51BN0CV9"></script>
