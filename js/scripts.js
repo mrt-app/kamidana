@@ -32,16 +32,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   const utmSource = urlParams.get('utm_source');
   const utmMedium = urlParams.get('utm_medium');
-  const utmCampaign = urlParams.get('utm_campaign');
-  const utmContent = urlParams.get('utm_content');
+  const inboundCampaign = urlParams.get('utm_campaign');
+  const inboundContent = urlParams.get('utm_content');
   const utmTerm = urlParams.get('utm_term');
 
   // Fallback to defaults if not present
   const source = utmSource || DEFAULT_UTM_SOURCE;
   const medium = utmMedium || DEFAULT_UTM_MEDIUM;
-  const campaign = utmCampaign || DEFAULT_UTM_CAMPAIGN;
-  const content = utmContent;
   const term = utmTerm;
+
+  function getJournalCtaContext(element) {
+    const cta = element.closest('[data-journal-cta]');
+    if (!cta) return null;
+
+    const articleSlug = cta.dataset.articleSlug;
+    const articleTopic = cta.dataset.articleTopic;
+    const placement = cta.dataset.ctaPlacement;
+    const storeCampaign = cta.dataset.storeCampaign;
+
+    if (!articleSlug || !articleTopic || !placement || !storeCampaign) return null;
+
+    return {
+      articleSlug: articleSlug,
+      articleTopic: articleTopic,
+      placement: placement,
+      storeCampaign: storeCampaign
+    };
+  }
+
+  function getStoreName(url) {
+    if (url.includes('apple.com')) return 'apple';
+    if (url.includes('google.com')) return 'google';
+    return 'unknown';
+  }
+
+  function getJournalCtaEventParams(badge) {
+    const context = getJournalCtaContext(badge);
+    if (!context) return null;
+
+    return {
+      article_slug: context.articleSlug,
+      article_topic: context.articleTopic,
+      cta_placement: context.placement,
+      store_name: getStoreName(badge.getAttribute('href') || '')
+    };
+  }
 
   // 2. Update all store badge links with UTM parameters
   const storeBadges = document.querySelectorAll('.store-badge');
@@ -49,13 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const originalHref = badge.getAttribute('href');
     if (!originalHref) return;
 
+    const ctaContext = getJournalCtaContext(badge);
+    const campaign = ctaContext ? ctaContext.storeCampaign : (inboundCampaign || DEFAULT_UTM_CAMPAIGN);
+    const content = ctaContext ? ctaContext.placement : inboundContent;
+
     try {
       const urlObj = new URL(originalHref, window.location.href);
       if (urlObj.hostname.includes('apple.com')) {
         // Construct Campaign Token (ct) for App Store (max 40 characters)
         let ctValue = '';
-        if (utmCampaign) {
-          ctValue = utmCampaign;
+        if (ctaContext) {
+          ctValue = ctaContext.storeCampaign;
+        } else if (inboundCampaign) {
+          ctValue = inboundCampaign;
           if (utmSource) {
             ctValue += '_' + utmSource;
           }
@@ -94,19 +135,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. Add GA4 event tracking listener
     badge.addEventListener('click', function() {
       const url = badge.getAttribute('href');
-      let storeName = 'unknown';
-      if (url.includes('apple.com')) {
-        storeName = 'apple';
-      } else if (url.includes('google.com')) {
-        storeName = 'google';
-      }
-      
+      const journalCtaParams = getJournalCtaEventParams(badge);
+      const storeName = getStoreName(url || '');
+
       if (typeof gtag === 'function') {
         gtag('event', 'click_store_badge', {
           'store_name': storeName,
-          'destination_url': url
+          'destination_url': url,
+          ...(journalCtaParams || {})
         });
       }
     });
   });
+
+  // Track each journal store badge once when at least half of it is visible.
+  if (typeof IntersectionObserver === 'function') {
+    const seenJournalCtaBadges = new WeakSet();
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting || seenJournalCtaBadges.has(entry.target)) return;
+
+        const journalCtaParams = getJournalCtaEventParams(entry.target);
+        if (!journalCtaParams || typeof gtag !== 'function') return;
+
+        seenJournalCtaBadges.add(entry.target);
+        gtag('event', 'view_journal_cta', journalCtaParams);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-journal-cta] .store-badge').forEach(function(badge) {
+      observer.observe(badge);
+    });
+  }
 });
