@@ -8,10 +8,10 @@
 // 		'ja';
 // 	return String(lang).toLowerCase();
 // 	}
-// 
+//
 // 	var language = getBrowserLanguage();
 // 	var isJapanese = language.startsWith('ja');
-// 
+//
 // 	if (
 // 	!location.search.includes('lang') &&
 // 	!isJapanese &&
@@ -26,15 +26,38 @@ const APP_STORE_PROVIDER_TOKEN = '118649014'; // App Store Provider Token (pt)
 const DEFAULT_UTM_SOURCE = 'official_web';
 const DEFAULT_UTM_MEDIUM = 'organic';
 const DEFAULT_UTM_CAMPAIGN = 'website_referral';
+const FIRST_TOUCH_STORAGE_KEY = 'kamidana_first_touch_utm_v1';
 
 document.addEventListener('DOMContentLoaded', function() {
-  // 1. Parse UTM parameters from URL search query
+  // 1. Persist the first inbound UTM set for the current browser session.
   const urlParams = new URLSearchParams(window.location.search);
-  const utmSource = urlParams.get('utm_source');
-  const utmMedium = urlParams.get('utm_medium');
-  const inboundCampaign = urlParams.get('utm_campaign');
-  const inboundContent = urlParams.get('utm_content');
-  const utmTerm = urlParams.get('utm_term');
+  const inboundUtm = {
+    source: urlParams.get('utm_source'),
+    medium: urlParams.get('utm_medium'),
+    campaign: urlParams.get('utm_campaign'),
+    content: urlParams.get('utm_content'),
+    term: urlParams.get('utm_term')
+  };
+  let firstTouchUtm = null;
+
+  try {
+    const storedUtm = window.sessionStorage.getItem(FIRST_TOUCH_STORAGE_KEY);
+    if (storedUtm) {
+      firstTouchUtm = JSON.parse(storedUtm);
+    } else if (Object.values(inboundUtm).some(Boolean)) {
+      firstTouchUtm = inboundUtm;
+      window.sessionStorage.setItem(FIRST_TOUCH_STORAGE_KEY, JSON.stringify(inboundUtm));
+    }
+  } catch (e) {
+    firstTouchUtm = null;
+  }
+
+  const effectiveUtm = firstTouchUtm || inboundUtm;
+  const utmSource = effectiveUtm.source;
+  const utmMedium = effectiveUtm.medium;
+  const inboundCampaign = effectiveUtm.campaign;
+  const inboundContent = effectiveUtm.content;
+  const utmTerm = effectiveUtm.term;
 
   // Fallback to defaults if not present
   const source = utmSource || DEFAULT_UTM_SOURCE;
@@ -60,10 +83,20 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
-  function getStoreName(url) {
-    if (url.includes('apple.com')) return 'apple';
-    if (url.includes('google.com')) return 'google';
-    return 'unknown';
+  function getStore(urlValue) {
+    try {
+      const url = new URL(urlValue, window.location.href);
+      const isApple = url.hostname === 'apps.apple.com' && url.pathname === '/app/apple-store/id1231920500';
+      const isGoogle = url.hostname === 'play.google.com' &&
+        url.pathname === '/store/apps/details' &&
+        url.searchParams.get('id') === 'com.gmail.mrt.another';
+
+      if (isApple) return { name: 'apple', url: url };
+      if (isGoogle) return { name: 'google', url: url };
+    } catch (e) {
+      return null;
+    }
+    return null;
   }
 
   function getJournalCtaEventParams(badge) {
@@ -74,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       article_slug: context.articleSlug,
       article_topic: context.articleTopic,
       cta_placement: context.placement,
-      store_name: getStoreName(badge.getAttribute('href') || '')
+      store_name: getStore(badge.getAttribute('href') || '').name
     };
   }
 
@@ -83,14 +116,16 @@ document.addEventListener('DOMContentLoaded', function() {
   storeBadges.forEach(function(badge) {
     const originalHref = badge.getAttribute('href');
     if (!originalHref) return;
+    const store = getStore(originalHref);
+    if (!store) return;
 
     const ctaContext = getJournalCtaContext(badge);
     const campaign = ctaContext ? ctaContext.storeCampaign : (inboundCampaign || DEFAULT_UTM_CAMPAIGN);
     const content = ctaContext ? ctaContext.placement : inboundContent;
 
     try {
-      const urlObj = new URL(originalHref, window.location.href);
-      if (urlObj.hostname.includes('apple.com')) {
+      const urlObj = store.url;
+      if (store.name === 'apple') {
         // Construct Campaign Token (ct) for App Store (max 40 characters)
         let ctValue = '';
         if (ctaContext) {
@@ -113,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         unifiedUrl.searchParams.set('ct', ctValue);
         unifiedUrl.searchParams.set('mt', '8');
         urlObj.href = unifiedUrl.toString();
-      } else if (urlObj.hostname.includes('google.com') || urlObj.hostname.includes('play.google.com')) {
+      } else if (store.name === 'google') {
         // Construct Referrer for Google Play Store
         const playParams = [];
         if (source) playParams.push('utm_source=' + encodeURIComponent(source));
@@ -136,11 +171,12 @@ document.addEventListener('DOMContentLoaded', function() {
     badge.addEventListener('click', function() {
       const url = badge.getAttribute('href');
       const journalCtaParams = getJournalCtaEventParams(badge);
-      const storeName = getStoreName(url || '');
+      const destinationStore = getStore(url || '');
+      if (!destinationStore) return;
 
       if (typeof gtag === 'function') {
         gtag('event', 'click_store_badge', {
-          'store_name': storeName,
+          'store_name': destinationStore.name,
           'destination_url': url,
           ...(journalCtaParams || {})
         });
@@ -165,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.5 });
 
     document.querySelectorAll('[data-journal-cta] .store-badge').forEach(function(badge) {
-      observer.observe(badge);
+      if (getStore(badge.getAttribute('href') || '')) observer.observe(badge);
     });
   }
 });

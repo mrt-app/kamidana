@@ -66,175 +66,175 @@
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/modern-kamidana.html</loc>
+    <loc>https://kamidana.app/journal/ja/modern-kamidana</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/modern-kamidana.html</loc>
+    <loc>https://kamidana.app/journal/en/modern-kamidana</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
     <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/oshi-kamidana.html</loc>
+    <loc>https://kamidana.app/journal/ja/oshi-kamidana</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/oshi-kamidana.html</loc>
+    <loc>https://kamidana.app/journal/en/oshi-kamidana</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/oharai-journal.html</loc>
+    <loc>https://kamidana.app/journal/ja/oharai-journal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/oharai-journal.html</loc>
+    <loc>https://kamidana.app/journal/en/oharai-journal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/morning-routine.html</loc>
+    <loc>https://kamidana.app/journal/ja/morning-routine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/morning-routine.html</loc>
+    <loc>https://kamidana.app/journal/en/morning-routine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/philosophy.html</loc>
+    <loc>https://kamidana.app/journal/ja/philosophy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/philosophy.html</loc>
+    <loc>https://kamidana.app/journal/en/philosophy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/osonae-guide.html</loc>
+    <loc>https://kamidana.app/journal/ja/osonae-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/osonae-guide.html</loc>
+    <loc>https://kamidana.app/journal/en/osonae-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/ofuda-guide.html</loc>
+    <loc>https://kamidana.app/journal/ja/ofuda-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal article (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/ofuda-guide.html</loc>
+    <loc>https://kamidana.app/journal/en/ofuda-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Digital Detox (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/digital-detox-omairi.html</loc>
+    <loc>https://kamidana.app/journal/ja/digital-detox-omairi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Digital Detox (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/digital-detox-omairi.html</loc>
+    <loc>https://kamidana.app/journal/en/digital-detox-omairi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Teinei Kurashi (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/teinei-kurashi-omairi.html</loc>
+    <loc>https://kamidana.app/journal/ja/teinei-kurashi-omairi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Teinei Kurashi (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/teinei-kurashi-omairi.html</loc>
+    <loc>https://kamidana.app/journal/en/teinei-kurashi-omairi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Asakatsu Routine (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/asakatsu-routine.html</loc>
+    <loc>https://kamidana.app/journal/ja/asakatsu-routine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Asakatsu Routine (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/asakatsu-routine.html</loc>
+    <loc>https://kamidana.app/journal/en/asakatsu-routine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Mindfulness Nakaima (JA) -->
   <url>
-    <loc>https://kamidana.app/journal/ja/mindfulness-nakaima.html</loc>
+    <loc>https://kamidana.app/journal/ja/mindfulness-nakaima</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Mindfulness Nakaima (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/mindfulness-nakaima.html</loc>
+    <loc>https://kamidana.app/journal/en/mindfulness-nakaima</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Journal: Omamori Guide (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/omamori-guide.html</loc>
+    <loc>https://kamidana.app/journal/en/omamori-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Journal: Kamidana Setup Guide (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/kamidana-setup-guide.html</loc>
+    <loc>https://kamidana.app/journal/en/kamidana-setup-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Journal: Shrine Visit Guide (EN) -->
   <url>
-    <loc>https://kamidana.app/journal/en/shrine-visit-guide.html</loc>
+    <loc>https://kamidana.app/journal/en/shrine-visit-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
