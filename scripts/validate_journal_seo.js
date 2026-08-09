@@ -17,6 +17,17 @@ const pairedSlugs = new Set([
   'teinei-kurashi-omairi'
 ]);
 const articleUrls = [];
+const sourcedGuides = new Set([
+  'en/kamidana-setup-guide',
+  'en/modern-kamidana',
+  'en/ofuda-guide',
+  'en/omamori-guide',
+  'en/osonae-guide',
+  'en/shrine-visit-guide',
+  'ja/modern-kamidana',
+  'ja/ofuda-guide',
+  'ja/osonae-guide'
+]);
 
 for (const lang of ['en', 'ja']) {
   const dir = path.join(root, 'journal', lang);
@@ -29,6 +40,28 @@ for (const lang of ['en', 'ja']) {
     assert.match(html, new RegExp(`<link rel="canonical" href="${url}"`), `${lang}/${file}: canonical`);
     assert.match(html, new RegExp(`<meta property="og:url" content="${url}"`), `${lang}/${file}: og:url`);
     assert.doesNotMatch(html, /https:\/\/kamidana\.app\/journal\/(?:en|ja)\/[^"<]+\.html/, `${lang}/${file}: .html URL`);
+    assert.equal((html.match(/<p class="journal-article-meta">/g) || []).length, 1, `${lang}/${file}: visible article metadata`);
+    assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">(?:Published|公開)/, `${lang}/${file}: published date`);
+    assert.match(html, /<time datetime="2026-08-09">(?:Updated|更新)/, `${lang}/${file}: updated date`);
+
+    const editorialNoteCount = (html.match(/<section class="journal-editorial-note">/g) || []).length;
+    if (sourcedGuides.has(`${lang}/${slug}`)) {
+      assert.equal(editorialNoteCount, 1, `${lang}/${file}: tailored editorial note`);
+      assert.match(html, /<section class="journal-editorial-note">[\s\S]*?<a href="https:\/\//, `${lang}/${file}: source link`);
+    } else {
+      assert.equal(editorialNoteCount, 0, `${lang}/${file}: no unrelated editorial note`);
+    }
+
+    const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    const articleSchemas = jsonLdBlocks.map((match) => JSON.parse(match[1])).filter((value) => value['@type'] === 'Article');
+    assert.equal(articleSchemas.length, 1, `${lang}/${file}: one Article schema`);
+    const article = articleSchemas[0];
+    assert.equal(article.mainEntityOfPage, url, `${lang}/${file}: Article mainEntityOfPage`);
+    assert.match(article.datePublished, /^\d{4}-\d{2}-\d{2}$/, `${lang}/${file}: Article datePublished`);
+    assert.equal(article.dateModified, '2026-08-09', `${lang}/${file}: Article dateModified`);
+    assert.equal(article.inLanguage, lang, `${lang}/${file}: Article inLanguage`);
+    assert.ok(article.author?.name, `${lang}/${file}: Article author`);
+    assert.ok(article.publisher?.name, `${lang}/${file}: Article publisher`);
 
     if (pairedSlugs.has(slug)) {
       assert.match(html, new RegExp(`href="https://kamidana.app/journal/en/${slug}" hreflang="en"`), `${lang}/${file}: en hreflang`);

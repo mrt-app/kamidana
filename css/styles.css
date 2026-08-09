@@ -747,10 +747,105 @@ footer.site-footer a {
 .journal-article li {
   line-height: 1.8;
   color: var(--text-main);
+  overflow-wrap: anywhere;
+}
+
+.journal-app-screenshot {
+  max-width: 360px;
+  margin: 2rem auto;
+}
+
+.journal-app-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(32, 45, 74, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(32, 45, 74, 0.12);
+}
+
+.journal-app-screenshot figcaption {
+  margin-top: 0.75rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .journal-article ul {
   padding-left: 20px;
+}
+
+.journal-boundary-example {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+.journal-boundary-card {
+  min-width: 0;
+  padding: 16px 18px;
+  background: rgba(235, 220, 255, 0.28);
+  border: 1px solid var(--border-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 14px;
+}
+
+.journal-boundary-card h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.journal-boundary-card p {
+  margin: 0;
+}
+
+.journal-table-scroll {
+  max-width: 100%;
+  margin: 16px 0 20px;
+  overflow-x: auto;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: var(--bg-alt);
+  -webkit-overflow-scrolling: touch;
+}
+
+.journal-table-scroll:focus-visible {
+  outline: 3px solid rgba(195, 164, 255, 0.5);
+  outline-offset: 3px;
+}
+
+.journal-table-scroll table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.journal-table-scroll th,
+.journal-table-scroll td {
+  padding: 12px 14px;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.journal-table-scroll th {
+  background: rgba(235, 220, 255, 0.45);
+  font-weight: 700;
+}
+
+.journal-table-scroll tr:last-child td {
+  border-bottom: 0;
+}
+
+.journal-table-scroll th:last-child,
+.journal-table-scroll td:last-child {
+  border-right: 0;
 }
 
 .journal-lead {
@@ -781,6 +876,10 @@ footer.site-footer a {
 
   .journal-article-header h1 {
     font-size: 1.4rem;
+  }
+
+  .journal-boundary-example {
+    grid-template-columns: 1fr;
   }
 }
 
