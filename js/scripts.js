@@ -28,7 +28,94 @@ const DEFAULT_UTM_MEDIUM = 'organic';
 const DEFAULT_UTM_CAMPAIGN = 'website_referral';
 const FIRST_TOUCH_STORAGE_KEY = 'kamidana_first_touch_utm_v1';
 
+function renderKoyomiPage() {
+  const calendar = typeof window !== 'undefined' ? window.KamidanaKoyomi : null;
+  if (!calendar || typeof document.querySelectorAll !== 'function') return false;
+
+  const pages = document.querySelectorAll('[data-koyomi-page]');
+  pages.forEach(function(page) {
+    if (!page || typeof page.querySelector !== 'function') return;
+
+    const data = calendar.calculateToday();
+    const setText = function(selector, value) {
+      const element = page.querySelector(selector);
+      if (element) element.textContent = value;
+    };
+
+    setText('[data-year]', `${data.year}年`);
+    setText('[data-date-main]', `${data.month}月${data.day}日`);
+    setText('[data-weekday]', data.weekdayLabel);
+    setText('[data-moon-age]', data.moonAge.toFixed(1));
+    setText('[data-moon-name]', data.moonName);
+    setText('[data-moon-phase]', data.moonPhase);
+    setText('[data-rokuyo]', data.rokuyo || '—');
+    setText('[data-rokuyo-description]', data.rokuyoDescription || 'この期間の六曜データはありません。');
+    setText('[data-junichoku]', data.junichoku || '—');
+    setText('[data-junichoku-description]', data.junichokuDescription || 'この期間の十二直データはありません。');
+    setText('[data-senjitsu]', data.senjitsu.length > 0 ? data.senjitsu.join('、') : '特になし');
+    setText(
+      '[data-senjitsu-description]',
+      data.senjitsuDescription.length > 0
+        ? data.senjitsuDescription.join('\n')
+        : '今日の暦には、特定の選日はありません。'
+    );
+    setText(
+      '[data-actions-context]',
+      data.actionContext
+        ? `「${data.actionContext}」を手がかりに、今日の小さな選択を。`
+        : '今日の暦を手がかりに、今日の小さな選択を。'
+    );
+    const actionList = page.querySelector('[data-action-list]');
+    if (actionList && Array.isArray(data.actionSuggestions)) {
+      actionList.replaceChildren();
+      data.actionSuggestions.forEach(function(action) {
+        const item = document.createElement('li');
+        item.className = 'action-item';
+        item.textContent = action;
+        actionList.appendChild(item);
+      });
+    }
+    setText(
+      '[data-advice]',
+      `${data.advice} ${data.moonAdvice}`
+    );
+    setText(
+      '[data-calendar-meta]',
+      `旧暦 ${data.lunar ? `${data.lunar.month}月${data.lunar.day}日` : '—'} · 日干支 ${data.hieto}`
+    );
+
+    const dateElement = page.querySelector('[data-date]');
+    if (dateElement) {
+      dateElement.setAttribute('datetime', data.isoDate);
+    }
+
+    const moonImage = page.querySelector('[data-moon-image]');
+    if (moonImage) {
+      const assetPrefix = page.getAttribute('data-asset-prefix') || '';
+      moonImage.setAttribute('src', `${assetPrefix}images/moon/moon_age_${data.moonImageNumber}.png`);
+      moonImage.setAttribute('alt', `${data.moonName}の月`);
+    }
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'view_today', {
+        page_path: page.dataset && page.dataset.pagePath ? page.dataset.pagePath : window.location.pathname
+      });
+    }
+  });
+  return true;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+  // The calendar module is loaded before this script, but retry briefly for
+  // browsers that restore a cached page and release deferred scripts late.
+  if (!renderKoyomiPage() && typeof window.setInterval === 'function') {
+    let attempts = 0;
+    const retryTimer = window.setInterval(function() {
+      attempts += 1;
+      if (renderKoyomiPage() || attempts >= 20) window.clearInterval(retryTimer);
+    }, 50);
+  }
+
   // 1. Persist the first inbound UTM set for the current browser session.
   const urlParams = new URLSearchParams(window.location.search);
   const inboundUtm = {
@@ -175,11 +262,15 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!destinationStore) return;
 
       if (typeof gtag === 'function') {
-        gtag('event', 'click_store_badge', {
+        const eventParams = {
           'store_name': destinationStore.name,
           'destination_url': url,
           ...(journalCtaParams || {})
-        });
+        };
+        if (!journalCtaParams) {
+          eventParams.page_path = window.location.pathname;
+        }
+        gtag('event', 'click_store_badge', eventParams);
       }
     });
   });
@@ -202,6 +293,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('[data-journal-cta] .store-badge').forEach(function(badge) {
       if (getStore(badge.getAttribute('href') || '')) observer.observe(badge);
+    });
+  }
+
+  // Track when the calendar has led into the small, action-oriented next step.
+  if (typeof IntersectionObserver === 'function') {
+    const actionSections = Array.from(document.querySelectorAll('[data-action-section]'));
+    if (actionSections.length > 0) {
+      const seenActionSections = new WeakSet();
+      const actionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          const section = entry.target;
+          if (!entry.isIntersecting || seenActionSections.has(section)) return;
+
+          seenActionSections.add(section);
+          if (typeof gtag === 'function') {
+            gtag('event', 'view_today_actions', {
+              page_path: window.location.pathname,
+              suggestion_count: section.querySelectorAll('[data-action-list] .action-item').length
+            });
+          }
+          actionObserver.unobserve(section);
+        });
+      }, { threshold: 0.5 });
+
+      actionSections.forEach(function(section) {
+        actionObserver.observe(section);
+      });
+    }
+  }
+
+  // Track the quiet, post-reading app CTA only after it enters the viewport.
+  if (typeof IntersectionObserver === 'function') {
+    const appCtas = Array.from(document.querySelectorAll('[data-app-cta]')).filter(function(cta) {
+      return cta && cta.dataset && cta.dataset.ctaPlacement;
+    });
+    if (appCtas.length === 0) return;
+
+    const seenAppCtas = new WeakSet();
+    const appCtaObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const cta = entry.target;
+        if (!entry.isIntersecting || seenAppCtas.has(cta) || !cta.dataset || !cta.dataset.ctaPlacement) return;
+        seenAppCtas.add(cta);
+        if (typeof gtag === 'function') {
+          gtag('event', 'view_app_cta', {
+            page_path: window.location.pathname,
+            cta_placement: cta.dataset.ctaPlacement
+          });
+        }
+        appCtaObserver.unobserve(cta);
+      });
+    }, { threshold: 0.5 });
+
+    appCtas.forEach(function(cta) {
+      appCtaObserver.observe(cta);
     });
   }
 });

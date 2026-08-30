@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Japanese top page -->
   <url>
-    <loc>https://kamidana.app/index.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://kamidana.app/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- App introduction -->
+  <url>
+    <loc>https://kamidana.app/app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- English top page -->
   <url>
-    <loc>https://kamidana.app/index-en.html</loc>
+    <loc>https://kamidana.app/index-en</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Fox Den story (JA) -->
   <url>
-    <loc>https://kamidana.app/fox-den-story.html</loc>
+    <loc>https://kamidana.app/fox-den-story</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Fox Den story (EN) -->
   <url>
-    <loc>https://kamidana.app/fox-den-story-en.html</loc>
+    <loc>https://kamidana.app/fox-den-story-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Privacy Policy (JA) -->
   <url>
-    <loc>https://kamidana.app/privacy-policy.html</loc>
+    <loc>https://kamidana.app/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Privacy Policy (EN) -->
   <url>
-    <loc>https://kamidana.app/privacy-en.html</loc>
+    <loc>https://kamidana.app/privacy-en</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

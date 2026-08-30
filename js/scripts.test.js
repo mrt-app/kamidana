@@ -18,16 +18,21 @@ function createBadge(href, cta) {
   };
 }
 
-function runPage({ search = '', badges = [], storage = new Map() } = {}) {
+function runPage({ search = '', badges = [], storage = new Map(), actionSections = [] } = {}) {
   const events = [];
   let onReady;
   let observerCallback;
   const observed = [];
   const document = {
     addEventListener: (name, listener) => { if (name === 'DOMContentLoaded') onReady = listener; },
-    querySelectorAll: (selector) => selector === '.store-badge'
-      ? badges
-      : badges.filter((badge) => badge.closest('[data-journal-cta]'))
+    querySelectorAll: (selector) => {
+      if (selector === '.store-badge') return badges;
+      if (selector === '[data-journal-cta] .store-badge') {
+        return badges.filter((badge) => badge.closest('[data-journal-cta]'));
+      }
+      if (selector === '[data-action-section]') return actionSections;
+      return [];
+    }
   };
   const context = {
     console,
@@ -37,7 +42,7 @@ function runPage({ search = '', badges = [], storage = new Map() } = {}) {
     WeakSet,
     Object,
     window: {
-      location: { href: `https://kamidana.app/journal/en/omamori-guide${search}`, search },
+      location: { href: `https://kamidana.app/journal/en/omamori-guide${search}`, pathname: '/journal/en/omamori-guide', search },
       sessionStorage: {
         getItem: (key) => storage.has(key) ? storage.get(key) : null,
         setItem: (key, value) => storage.set(key, value)
@@ -144,4 +149,22 @@ test('limits the App Store campaign token to 40 characters', () => {
   const badge = createBadge(appleUrl);
   runPage({ search: `?utm_source=${'s'.repeat(30)}&utm_campaign=${'c'.repeat(30)}`, badges: [badge] });
   assert.equal(new URL(badge.attributes.href).searchParams.get('ct').length, 40);
+});
+
+test('tracks the calendar action section once when it is visible', () => {
+  const actionSection = {
+    querySelectorAll: (selector) => selector === '[data-action-list] .action-item'
+      ? [{}, {}, {}]
+      : []
+  };
+  const page = runPage({ actionSections: [actionSection] });
+
+  assert.equal(page.observed.length, 1);
+  page.observerCallback([{ target: actionSection, isIntersecting: true }]);
+  page.observerCallback([{ target: actionSection, isIntersecting: true }]);
+  assert.deepEqual(page.events[0].slice(0, 2), ['event', 'view_today_actions']);
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(page.events[0][2])),
+    { page_path: '/journal/en/omamori-guide', suggestion_count: 3 }
+  );
 });
