@@ -8,10 +8,10 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- App introduction -->
+  <!-- Today's Koyomi -->
   <url>
-    <loc>https://kamidana.app/app/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://kamidana.app/koyomi/</loc>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 

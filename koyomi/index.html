@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="今日の月齢、月相、六曜、十二直、選日を静かに確認できる神棚アプリの無料の暦。" />
+  <meta name="author" content="mrt app" />
+
+  <meta property="og:site_name" content="神棚アプリ" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="今日の暦 | 神棚アプリ - quiet daily calendar" />
+  <meta property="og:description" content="今日の月齢、月相、六曜、十二直、選日を静かに確認できます。" />
+  <meta property="og:image" content="https://kamidana.app/images/app_icon.png" />
+  <meta property="og:url" content="https://kamidana.app/koyomi/" />
+
+  <link rel="canonical" href="https://kamidana.app/koyomi/" />
+  <link rel="alternate" href="https://kamidana.app/koyomi/" hreflang="ja" />
+  <link rel="icon" href="../images/favicon.png" />
+  <link rel="preload" href="../css/fontawesome-all.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="../css/fontawesome-all.css" rel="stylesheet" /></noscript>
+  <link href="../css/styles.css?v=phase1.1-final-6" rel="stylesheet" />
+
+  <title>今日の暦 | 神棚アプリ - quiet daily calendar</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "今日の暦",
+      "description": "今日の月齢、月相、六曜、十二直、選日を確認できる神棚アプリの無料の暦。",
+      "url": "https://kamidana.app/koyomi/",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "神棚アプリ",
+        "url": "https://kamidana.app/"
+      }
+    }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE51BN0CV9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-KE51BN0CV9');
+  </script>
+</head>
+
+<body>
+  <main class="web-product" data-koyomi-page data-page-path="/koyomi/" data-asset-prefix="../">
+    <header class="site-header product-header">
+      <a class="product-brand" href="/" aria-label="Kamidana ホーム">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">
+          <span class="logo-text-ja">Kamidana</span>
+          <span class="logo-text-en">quiet daily calendar</span>
+        </span>
+      </a>
+      <nav class="product-nav" aria-label="メインナビゲーション">
+        <a class="is-current" href="#today-reading-title">今日の暦</a>
+        <a href="../journal/ja/index.html">Journal</a>
+        <a href="/">App</a>
+      </nav>
+    </header>
+
+    <noscript>
+      <p class="today-noscript">今日の暦を表示するにはJavaScriptを有効にしてください。</p>
+    </noscript>
+
+    <section class="today-hero">
+      <div class="today-hero-copy">
+        <div class="section-label">TODAY / 今日</div>
+        <h1 class="today-title">今日の暦</h1>
+        <p class="today-lede">今日の時間を、静かに見る。</p>
+        <p class="today-copy">今日の月と暦から、今日の手がかりを見つけます。</p>
+      </div>
+
+      <div class="today-date-panel">
+        <p class="today-overline">今日</p>
+        <time class="today-date" data-date>
+          <span class="today-year" data-year></span>
+          <span class="today-date-main" data-date-main></span>
+          <span class="today-weekday" data-weekday></span>
+        </time>
+        <div class="moon-summary">
+          <img data-moon-image alt="月の形" width="64" height="64" />
+          <div>
+            <p class="data-label">月齢</p>
+            <p class="moon-age"><strong data-moon-age>—</strong> <span>日</span></p>
+            <p class="moon-name" data-moon-name>読み込み中</p>
+            <p class="moon-phase" data-moon-phase>読み込み中</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-reading" aria-labelledby="today-reading-title">
+      <div class="reading-heading">
+        <div class="section-label">KOYOMI</div>
+        <h2 id="today-reading-title" class="section-title">今日の暦</h2>
+        <p class="section-subtitle">六曜・十二直・選日の意味を、短い説明とともに紹介します。</p>
+      </div>
+
+      <div class="koyomi-list" data-koyomi-list>
+        <article class="koyomi-row" data-koyomi-section="rokuyo">
+          <div class="koyomi-row-heading">
+            <span class="koyomi-label">六曜</span>
+            <span class="koyomi-label-note">日の吉凶を表す暦</span>
+          </div>
+          <div class="koyomi-value" data-rokuyo>—</div>
+          <p class="koyomi-explanation" data-rokuyo-description>読み込み中</p>
+        </article>
+
+        <article class="koyomi-row" data-koyomi-section="junichoku">
+          <div class="koyomi-row-heading">
+            <span class="koyomi-label">十二直</span>
+            <span class="koyomi-label-note">日のよい過ごし方を見る暦</span>
+          </div>
+          <div class="koyomi-value" data-junichoku>—</div>
+          <p class="koyomi-explanation" data-junichoku-description>読み込み中</p>
+        </article>
+
+        <article class="koyomi-row" data-koyomi-section="senjitsu">
+          <div class="koyomi-row-heading">
+            <span class="koyomi-label">選日</span>
+            <span class="koyomi-label-note">特定の意味を持つ日</span>
+          </div>
+          <div class="koyomi-value" data-senjitsu>—</div>
+          <p class="koyomi-explanation" data-senjitsu-description>読み込み中</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="today-guidance" aria-labelledby="today-guidance-title">
+      <div class="guidance-mark" aria-hidden="true">○</div>
+      <div>
+        <div class="section-label">A QUIET NOTE</div>
+        <h2 id="today-guidance-title" class="section-title">今日について</h2>
+        <p class="guidance-text" data-advice>今日の暦を読み込んでいます。</p>
+        <p class="guidance-meta" data-calendar-meta>旧暦 — · 日干支 —</p>
+      </div>
+    </section>
+
+    <section class="today-actions" data-action-section aria-labelledby="today-actions-title">
+      <div class="section-label">A SMALL NEXT STEP</div>
+      <h2 id="today-actions-title" class="section-title">今日、どうする？</h2>
+      <p class="section-subtitle" data-actions-context>今日の暦を読み込んでいます。</p>
+      <ul class="action-list" data-action-list>
+        <li class="action-item">読み込み中</li>
+      </ul>
+    </section>
+
+    <section class="after-reading" data-app-cta data-cta-placement="after_today" aria-labelledby="app-cta-title">
+      <div class="after-reading-copy">
+        <div class="section-label">WHEN YOU WANT TO KEEP IT</div>
+        <h2 id="app-cta-title">今日を残しておく</h2>
+        <p>今日の暦をきっかけに選んだこと、感じたこと、願ったこと。神棚アプリなら、それらをそっと残して、あとから振り返れます。</p>
+      </div>
+      <figure class="after-reading-preview">
+        <img src="../journal/images/kamidana-ios-home-ja.avif" alt="月と暦、お参り日記、願い事が並ぶKamidana Appのホーム画面" width="368" height="800" loading="lazy" />
+        <figcaption>今日の暦と、日々の記録を並べて振り返る。</figcaption>
+      </figure>
+      <div class="after-reading-action">
+        <p class="after-reading-bridge">今日見つけた手がかりを、自分の時間として残すために。</p>
+        <div class="store-badges" aria-label="Kamidana Appを使い始める">
+          <a class="store-badge" href="https://apps.apple.com/app/apple-store/id1231920500?pt=118649014&ct=official_web&mt=8" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-apple" aria-hidden="true"></i>
+            <span>App Store</span>
+          </a>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.gmail.mrt.another&referrer=utm_source%3Dofficial_web%26utm_medium%3Dorganic%26utm_campaign%3Dwebsite_referral" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-google-play" aria-hidden="true"></i>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer product-footer">
+      <div>© <a href="https://mrt-app.github.io/" target="_blank" rel="noopener noreferrer">mrt app</a></div>
+      <div class="footer-links">
+        <a href="../journal/ja/index.html">Journal</a>
+        <span class="footer-separator">／</span>
+        <a href="/">アプリ紹介</a>
+        <span class="footer-separator">／</span>
+        <a href="../privacy-policy.html">プライバシーポリシー</a>
+      </div>
+    </footer>
+
+    <script src="../js/koyomi.js?v=phase1.1-final-3"></script>
+    <script src="../js/scripts.js?v=phase1.1-final-3" defer></script>
+  </main>
+</body>
+
+</html>
