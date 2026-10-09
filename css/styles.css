@@ -859,6 +859,64 @@ footer.site-footer a {
   padding: 20px 22px;
 }
 
+.journal-summary-box {
+  background: #fbf9fe;
+  border: 1px solid rgba(130, 106, 170, 0.22);
+  border-left: 4px solid #7c5ea8;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 22px 0 28px;
+}
+
+.journal-summary-box h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #3b2a59;
+}
+
+.journal-summary-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.journal-summary-box li {
+  margin-bottom: 6px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #3a3347;
+}
+
+.journal-summary-box li:last-child {
+  margin-bottom: 0;
+}
+
+.journal-lp-wrapper {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(130, 106, 170, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.journal-lp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5b3a8b;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.journal-lp-link:hover,
+.journal-lp-link:focus-visible {
+  color: #381f61;
+  text-decoration: underline;
+  transform: translateX(2px);
+}
+
 .journal-link {
   color: #5b3a8b;
   text-decoration: none;

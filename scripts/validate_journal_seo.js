@@ -42,7 +42,7 @@ for (const lang of ['en', 'ja']) {
     assert.doesNotMatch(html, /https:\/\/kamidana\.app\/journal\/(?:en|ja)\/[^"<]+\.html/, `${lang}/${file}: .html URL`);
     assert.equal((html.match(/<p class="journal-article-meta">/g) || []).length, 1, `${lang}/${file}: visible article metadata`);
     assert.match(html, /<time datetime="\d{4}-\d{2}-\d{2}">(?:Published|公開)/, `${lang}/${file}: published date`);
-    assert.match(html, /<time datetime="2026-08-09">(?:Updated|更新)/, `${lang}/${file}: updated date`);
+    assert.match(html, /<time datetime="2026-(?:08-09|10-09)">(?:Updated|更新)/, `${lang}/${file}: updated date`);
 
     const editorialNoteCount = (html.match(/<section class="journal-editorial-note">/g) || []).length;
     if (sourcedGuides.has(`${lang}/${slug}`)) {
@@ -58,7 +58,7 @@ for (const lang of ['en', 'ja']) {
     const article = articleSchemas[0];
     assert.equal(article.mainEntityOfPage, url, `${lang}/${file}: Article mainEntityOfPage`);
     assert.match(article.datePublished, /^\d{4}-\d{2}-\d{2}$/, `${lang}/${file}: Article datePublished`);
-    assert.equal(article.dateModified, '2026-08-09', `${lang}/${file}: Article dateModified`);
+    assert.ok(['2026-08-09', '2026-10-09'].includes(article.dateModified), `${lang}/${file}: Article dateModified`);
     assert.equal(article.inLanguage, lang, `${lang}/${file}: Article inLanguage`);
     assert.ok(article.author?.name, `${lang}/${file}: Article author`);
     assert.ok(article.publisher?.name, `${lang}/${file}: Article publisher`);

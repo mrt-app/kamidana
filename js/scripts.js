@@ -207,8 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!store) return;
 
     const ctaContext = getJournalCtaContext(badge);
+    const badgeSource = ctaContext ? 'journal' : (utmSource || DEFAULT_UTM_SOURCE);
+    const badgeMedium = ctaContext ? (ctaContext.placement || 'article') : (utmMedium || DEFAULT_UTM_MEDIUM);
     const campaign = ctaContext ? ctaContext.storeCampaign : (inboundCampaign || DEFAULT_UTM_CAMPAIGN);
-    const content = ctaContext ? ctaContext.placement : inboundContent;
+    const content = ctaContext ? (ctaContext.articleTopic || ctaContext.placement) : inboundContent;
 
     try {
       const urlObj = store.url;
@@ -238,8 +240,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (store.name === 'google') {
         // Construct Referrer for Google Play Store
         const playParams = [];
-        if (source) playParams.push('utm_source=' + encodeURIComponent(source));
-        if (medium) playParams.push('utm_medium=' + encodeURIComponent(medium));
+        if (badgeSource) playParams.push('utm_source=' + encodeURIComponent(badgeSource));
+        if (badgeMedium) playParams.push('utm_medium=' + encodeURIComponent(badgeMedium));
         if (campaign) playParams.push('utm_campaign=' + encodeURIComponent(campaign));
         if (content) playParams.push('utm_content=' + encodeURIComponent(content));
         if (term) playParams.push('utm_term=' + encodeURIComponent(term));
@@ -321,6 +323,66 @@ document.addEventListener('DOMContentLoaded', function() {
         actionObserver.observe(section);
       });
     }
+  }
+
+  // 4. Track Journal -> LP clicks and enrich with contextual UTM parameters
+  if (window.location.pathname.includes('/journal')) {
+    const isEn = window.location.pathname.includes('/journal/en');
+    const defaultLpPath = isEn ? '/index-en' : '/index.html';
+    const pageCtaElem = document.querySelector('[data-journal-cta]');
+    const pathSlug = window.location.pathname.split('/').filter(Boolean).pop().replace(/\.html$/, '');
+    const fallbackSlug = (pathSlug && pathSlug !== 'en' && pathSlug !== 'ja' && pathSlug !== 'journal') ? pathSlug : 'journal_index';
+    const fallbackTopic = pageCtaElem && pageCtaElem.dataset.articleTopic ? pageCtaElem.dataset.articleTopic : 'general';
+
+    const journalLpLinks = document.querySelectorAll(
+      'a.journal-lp-link, [data-journal-lp-link], .header-cta a[href*="index"], .site-header a[href*="index"], .breadcrumb a[href*="index"]'
+    );
+
+    journalLpLinks.forEach(function(link) {
+      const ctaContext = getJournalCtaContext(link);
+      let placement = 'in_article';
+      if (ctaContext) {
+        placement = ctaContext.placement;
+      } else if (link.closest('.site-header, .header-cta')) {
+        placement = 'header';
+      } else if (link.closest('.breadcrumb')) {
+        placement = 'breadcrumb';
+      } else if (link.closest('.site-footer')) {
+        placement = 'footer';
+      }
+
+      const slug = (ctaContext && ctaContext.articleSlug) || (pageCtaElem && pageCtaElem.dataset.articleSlug) || fallbackSlug;
+      const topic = (ctaContext && ctaContext.articleTopic) || (pageCtaElem && pageCtaElem.dataset.articleTopic) || fallbackTopic;
+
+      try {
+        const href = link.getAttribute('href');
+        if (href) {
+          const url = new URL(href, window.location.href);
+          if (url.origin === window.location.origin && (url.pathname === '/' || url.pathname.includes('index'))) {
+            if (!url.searchParams.get('utm_source')) {
+              url.searchParams.set('utm_source', 'journal');
+              url.searchParams.set('utm_medium', placement);
+              url.searchParams.set('utm_campaign', slug);
+              url.searchParams.set('utm_content', topic);
+              link.setAttribute('href', url.pathname + url.search + url.hash);
+            }
+          }
+        }
+      } catch (e) {
+        // ignore invalid URL strings
+      }
+
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_journal_to_lp', {
+            article_slug: slug,
+            article_topic: topic,
+            link_placement: placement,
+            destination_url: link.getAttribute('href') || defaultLpPath
+          });
+        }
+      });
+    });
   }
 
   // Track the quiet, post-reading app CTA only after it enters the viewport.
