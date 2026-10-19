@@ -93,11 +93,6 @@
   </url>
 
   <!-- Journal article (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/oshi-kamidana</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal article (JA) -->
   <url>
@@ -107,25 +102,10 @@
   </url>
 
   <!-- Journal article (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/oharai-journal</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal article (JA) -->
-  <url>
-    <loc>https://kamidana.app/journal/ja/morning-routine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal article (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/morning-routine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal article (JA) -->
   <url>
@@ -135,11 +115,6 @@
   </url>
 
   <!-- Journal article (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/philosophy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal article (JA) -->
   <url>
@@ -170,60 +145,20 @@
   </url>
 
   <!-- Journal: Digital Detox (JA) -->
-  <url>
-    <loc>https://kamidana.app/journal/ja/digital-detox-omairi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Digital Detox (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/digital-detox-omairi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Teinei Kurashi (JA) -->
-  <url>
-    <loc>https://kamidana.app/journal/ja/teinei-kurashi-omairi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Teinei Kurashi (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/teinei-kurashi-omairi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Asakatsu Routine (JA) -->
-  <url>
-    <loc>https://kamidana.app/journal/ja/asakatsu-routine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Asakatsu Routine (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/asakatsu-routine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Mindfulness Nakaima (JA) -->
-  <url>
-    <loc>https://kamidana.app/journal/ja/mindfulness-nakaima</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Mindfulness Nakaima (EN) -->
-  <url>
-    <loc>https://kamidana.app/journal/en/mindfulness-nakaima</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- Journal: Omamori Guide (EN) -->
   <url>
@@ -246,4 +181,35 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Journal New Articles (2026-10-19) -->
+  <url>
+    <loc>https://kamidana.app/journal/ja/health-family-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamidana.app/journal/ja/wealth-business-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamidana.app/journal/ja/relationship-enmusubi-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamidana.app/journal/en/health-family-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamidana.app/journal/en/wealth-business-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamidana.app/journal/en/relationship-enmusubi-prayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
