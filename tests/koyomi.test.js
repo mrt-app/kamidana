@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const test = require('node:test');
 
-const { actionSuggestionsFor, calculateForDate, calculateToday } = require('./koyomi.js');
+const { actionSuggestionsFor, calculateForDate, calculateToday } = require('../js/koyomi.js');
 
 function day(year, month, date) {
   return new Date(Date.UTC(year, month - 1, date, 12, 0, 0, 0));

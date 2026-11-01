@@ -1,9 +1,10 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const path = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
 
-const source = fs.readFileSync(__dirname + '/scripts.js', 'utf8');
+const source = fs.readFileSync(path.join(__dirname, '../js/scripts.js'), 'utf8');
 
 function createBadge(href, cta) {
   const attributes = { href };
@@ -25,6 +26,7 @@ function runPage({ search = '', badges = [], storage = new Map(), actionSections
   const observed = [];
   const document = {
     addEventListener: (name, listener) => { if (name === 'DOMContentLoaded') onReady = listener; },
+    querySelector: () => null,
     querySelectorAll: (selector) => {
       if (selector === '.store-badge') return badges;
       if (selector === '[data-journal-cta] .store-badge') {
